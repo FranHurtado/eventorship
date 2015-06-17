@@ -1,4 +1,3 @@
-
 app.controller('SubscriptionController', ['$http', '$location', function ($http, $location){
 
 	var subscriptionCtrl = this;

@@ -1,4 +1,3 @@
-
 app.controller('MainController', ['$location', function ($location){
 
 	var mainCtrl = this;

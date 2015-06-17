@@ -1,27 +1,6 @@
 <script src="/javascripts/angular/controllers/SubscriptionController.js"></script>
 
-<div id="menu">
-	<nav class="navbar-wrapper navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-					<span class="sr-only">Toggle navigation</span>
-				  	<span class="icon-bar"></span>
-				  	<span class="icon-bar"></span>
-				  	<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand site-name" href="#top"></a>
-			</div>
-	 
-			<div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-				<ul class="nav navbar-nav">
-					<li><a href="/<%= lang %>"><%= __('Inicio') %></a></li>
-					<li><a href="#"><%= __('Login') %></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-</div>
+<%- include _menu.ejs %>
 
 <div id="single-page">
 	<div class="container">

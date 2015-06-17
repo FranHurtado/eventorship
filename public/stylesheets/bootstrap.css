@@ -6858,6 +6858,9 @@ ol li {
   margin: 1em 0;
   text-align: justify;
 }
+.row-form {
+  margin: 1em 0;
+}
 #preloader {
   position: fixed;
   left: 0;
@@ -6914,17 +6917,17 @@ ol li {
   color: #3eb0f7;
 }
 .btn-default {
-  font-size: 17px;
-  margin: 30px 0 10px;
-  margin-right: 10px;
-  line-height: 20px;
-  padding: 15px 35px;
-  height: 50px;
+  font-size: 1em;
+  margin: 1em 0 0.5em;
+  margin-right: 0.3em;
+  line-height: 1.6em;
+  padding: 0.7em 1.6em;
   border: 2px solid #3eb0f7;
   background: transparent;
   transition: all 0.4s;
   color: #3eb0f7;
   border-radius: 100px;
+  display: inline-block;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -6936,17 +6939,17 @@ ol li {
   color: white;
 }
 .btn-primary {
-  font-size: 17px;
-  margin: 30px 0 10px;
-  margin-right: 10px;
-  line-height: 20px;
-  padding: 15px 35px;
-  height: 50px;
+  font-size: 1em;
+  margin: 1em 0 0.5em;
+  margin-right: 0.3em;
+  line-height: 1.6em;
+  padding: 0.7em 1.6em;
   border: 2px solid #3eb0f7;
   background: #3eb0f7;
   transition: all 0.4s;
   color: white;
   border-radius: 100px;
+  display: inline-block;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -7439,6 +7442,21 @@ ol li {
   background-color: #1f96e0;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
+}
+#login-form {
+  margin: 0 auto;
+}
+#login-form .form-control {
+  border-radius: 0;
+  border: solid 1px #dadada;
+  background-color: #fff;
+  color: #333;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  height: auto;
+}
+#login-form .btn-default {
+  width: 100%;
 }
 #footer {
   background: #fff;
