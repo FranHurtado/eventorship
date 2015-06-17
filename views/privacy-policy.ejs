@@ -1,0 +1,72 @@
+<script src="/javascripts/angular/controllers/SubscriptionController.js"></script>
+
+<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+					<span class="sr-only">Toggle navigation</span>
+				  	<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand site-name" href="#top"></a>
+			</div>
+	 
+			<div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="/<%= lang %>"><%= __('Inicio') %></a></li>
+					<li><a href="#"><%= __('Login') %></a></li>
+				</ul>
+			</div>
+		</div><!-- .container -->
+	</nav>
+</div><!-- #menu -->
+
+<div id="single-page">
+	<div class="container">
+		<h2 class="wow fadeInLeft">PRIVACY POLICY</h2>
+		<div class="title-line-left wow fadeInRight"></div>		  
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container">
+			<ol>
+				<li><%= __("The User is aware of and consents to the existence of a personal data file under the  responsibility of Eventorship, in which the personal data that are provided to Eventorship by the User are stored, in accordance with the articles 5, 6 and 9 of the law 15/1999 of the 13th of December, \"Ley de Protección de Datos 1999\". ") %></li>
+				<li><%= __("The User is aware of and gives its consent to the use of data by Eventorship from the website and stored in a Users web browser while the User is browsing the website (\"Cookies\") for the purpose of improving and personalizing the services provided on the website, in  accordance with article 22.2 of the law 34/2002 of the 11th of July \"Ley de servicios de la sociedad de la  información y de comercio electrónico\". ") %></li>
+				<li><%= __("The User is  aware of his right, in accordance with article 5 of the law 15/1999 of the 13th  of December, \"Ley de Protección de Datos 1999\", to access the stored data and  to request its rectification or annulment. The User has the right to object to the storage of data. Requests to access, rectification or annulment and  objections to the storage of their data can be directed to Eventorship at its  registered address at C/Señora sergia 2 (28250) Torrelodones, Madrid, Spain, or by way of e-mail directed to") %> <a href="mailto:info@eventorship.com">info@eventorship.com</a>.</li>
+				<li><%= __("The User specifically states that he has been informed, in accordance  with article 5 of the law 15/1999 of the 13th of December, \"Ley de  Protección de Datos 1999\", as to which data Eventorship has required of  him as a condition for registration on the Website and which extra data have  been asked optionally.") %></li>
+				<li><%= __("Eventorship uses the personal data for administrative  purposes. Further, certain information given by User, specifically indicated on  the registration form, will be used to create a public profile which can be  accessed by all Users. The User is aware of and consents with this described  use of his personal data, all in accordance with article 5 and 11 of the law  15/1999 of the 13th of December, \"Ley de Protección de Datos 1999\". Eventorship will further use the personal data in order to  make personalized offers to the User, either through the website or by way of  mailings.") %></li>
+			</ol>
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->
+
+<div class="fullscreen cta parallax" data-img-width="2000" data-img-height="1333" data-diff="100">
+			
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 text-center">
+				
+					<div class="landing-text wow fadeInLeft">
+						<p><%= __('Are you planing your next event but you need sponsors? Subscribe today and we help you to find them.') %></p>
+					</div>				  
+
+					<div class="subscribe-form wow fadeInUp">
+						<form class="news-letter mailchimp" name="subscribeForm" ng-controller="SubscriptionController as subscriptionCtrl" ng-submit="subscriptionCtrl.addSubscription()" novalidate>
+							<input ng-model="subscriptionCtrl.email" class="form-control" type="email" name="email" placeholder="<%= __('Your email') %>..." required />
+							<p ng-show="subscriptionCtrl.status==1" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-danger">{{subscriptionCtrl.message}}</span>
+							</p>
+							<p ng-show="subscriptionCtrl.status==0" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-success">{{subscriptionCtrl.message}}</span>
+							</p>
+							<button type="submit" class="subscribe-btn btn"><%= __('SUBSCRIBE') %></button>
+						</form>
+					</div><!-- .subscribe-form -->	
+				</div> <!-- .col -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .overlay --> 
+
+</div><!-- .fullscreen -->

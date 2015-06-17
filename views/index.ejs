@@ -1,0 +1,125 @@
+<script src="/javascripts/angular/controllers/SubscriptionController.js"></script>
+<script src="/javascripts/angular/controllers/ContactController.js"></script>
+
+<div id="preloader"></div>
+
+<div class="fullscreen landing parallax" data-img-width="2000" data-img-height="1333" data-diff="100">
+			
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 text-center">
+				
+					<h1 class="wow fadeInLeft"><%= __('Welcome to Eventorship') %></h1>
+
+					<div class="landing-text wow fadeInLeft">
+						<p><%= __('Are you planing your next event but you need sponsors? Subscribe today and we help you to find them.') %></p>
+					</div>				  
+
+					<div class="subscribe-form wow fadeInUp">
+						<form class="news-letter mailchimp" name="subscribeForm" ng-controller="SubscriptionController as subscriptionCtrl" ng-submit="subscriptionCtrl.addSubscription()" novalidate>
+							<input ng-model="subscriptionCtrl.email" class="form-control" type="email" name="email" placeholder="<%= __('Your email') %>..." required />
+							<p ng-show="subscriptionCtrl.status==1" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-danger">{{subscriptionCtrl.message}}</span>
+							</p>
+							<p ng-show="subscriptionCtrl.status==0" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-success">{{subscriptionCtrl.message}}</span>
+							</p>
+							<button type="submit" class="subscribe-btn btn"><%= __('SUBSCRIBE') %></button>
+						</form>
+					</div><!-- .subscribe-form -->	
+				</div> <!-- .col -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .overlay --> 
+
+</div><!-- .fullscreen -->
+
+<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+					<span class="sr-only">Toggle navigation</span>
+				  	<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				  	<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand site-name" href="#top"></a>
+			</div>
+	 
+			<div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="#intro"><%= __('About') %></a></li>
+					<li><a href="#contact"><%= __('Contact') %></a></li>
+				</ul>
+			</div>
+		</div><!-- .container -->
+	</nav>
+</div><!-- #menu -->
+
+<div id="intro">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 intro-pic wow slideInLeft">
+				<img src="/images/ipad.png" alt="ipad" class="img-responsive">
+			</div>	
+			
+			<div class="col-md-6 wow slideInRight">
+				<h2><%= __('Find the proper sponsors for your event') %></h2>
+				<p>
+					<%= __('Eventorship helps people and organizations to connect with good sponsors for their events. We believe in local sponsorship so we use a complex algorythm to find sponsors inside your community. Subscribe for more information.') %>
+				</p>
+
+					<div class="btn-section"><a href="#top" class="btn-default"><%= __('Subscribe') %></a></div>
+		
+			</div>
+		</div>			  
+	</div><!-- .container -->
+</div><!-- #intro -->
+
+<div id="contact">
+	<div class="contact fullscreen parallax" data-img-width="2000" data-img-height="1334" data-diff="100">
+		<div class="overlay">
+			<div class="container">
+				<div class="row contact-row">
+				
+					<!-- /.address and contact -->
+					<div class="col-sm-5 contact-left wow fadeInUp">
+						<h2><span class="highlight"><%= __('Get') %></span> <%= __('in touch') %></h2>
+							<ul class="ul-address">
+							<li><i class="pe-7s-mail"></i><a href="mailto:info@eventorship.com">info@eventorship.com</a></li>
+							<li><i class="pe-7s-look"></i><a href="#">www.eventorship.com</a></li>
+							</ul>	
+								
+					</div>
+					
+					<!-- /.contact form -->
+					<div class="col-sm-7 contact-right">
+						<form id="contact-form" class="form-horizontal" name="contactForm" ng-controller="ContactController as contactCtrl" ng-submit="contactCtrl.sendContact()" novalidate>
+							<div class="form-group">
+								<input ng-model="contactCtrl.name" type="text" name="Name" id="Name" class="form-control wow fadeInUp" placeholder="<%= __('Your name') %>" required>
+							</div>
+							<div class="form-group">
+								<input ng-model="contactCtrl.email" type="text" name="Email" id="Email" class="form-control wow fadeInUp" placeholder="<%= __('Your email') %>" required>
+							</div>					
+							<div class="form-group">
+								<textarea ng-model="contactCtrl.comments" name="Message" rows="20" cols="20" id="Message" class="form-control input-message wow fadeInUp"  placeholder="<%= __('Comments') %>" required></textarea>
+							</div>
+							<p ng-show="contactCtrl.status==1" class="text-center" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-danger">{{contactCtrl.message}}</span>
+							</p>
+							<p ng-show="contactCtrl.status==0" class="text-center" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-success">{{contactCtrl.message}}</span>
+							</p>
+							<div class="form-group">
+								<input type="submit" name="submit" value="<%= __('Submit') %>" class="btn btn-success wow fadeInUp" />
+							</div>
+						</form>		
+					</div>
+				</div>
+			</div><!-- .container -->
+		</div>
+	</div><!-- .contact -->
+</div><!-- #contact -->

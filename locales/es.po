@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-06-17 01:44+0100\n"
+"PO-Revision-Date: 2015-06-17 01:44+0100\n"
+"Last-Translator: Fran Hurtado <fhurtado@swapsee.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/nodeapp/eventsApp\n"
+"X-Poedit-SearchPath-1: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes\n"
+"X-Poedit-SearchPath-2: /Applications/MAMP/htdocs/nodeapp/eventsApp/views\n"
+"X-Poedit-SearchPathExcluded-0: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"node_modules\n"
+"X-Poedit-SearchPathExcluded-1: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"bootstrap\n"
+"X-Poedit-SearchPathExcluded-2: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"public\n"
+"X-Poedit-SearchPathExcluded-3: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"locales\n"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:13
+msgid "Welcome to Eventorship"
+msgstr "Bienvenido a Eventorship"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:16
+msgid ""
+"Are you planing your next event but you need sponsors? Subscribe today and "
+"we help you to find them."
+msgstr ""
+"¿Estas planeando tu evento pero necesitas patrocinadores? Suscríbete ahora y "
+"nosotros te ayudaremos a encontrarlos."
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:21
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:105
+msgid "Your email"
+msgstr "Tu email"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:28
+msgid "SUBSCRIBE"
+msgstr "SUSCRIBETE"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:53
+msgid "About"
+msgstr "Nosotros"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:54
+msgid "Contact"
+msgstr "Contacto"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:70
+msgid "Find the proper sponsors for your event"
+msgstr "Encuentra los patrocinadores adecuados para tu evento"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:72
+msgid ""
+"Eventorship helps people and organizations to connect with good sponsors for "
+"their events. We believe in local sponsorship so we use a complex algorythm "
+"to find sponsors inside your community. Subscribe for more information."
+msgstr ""
+"Eventorship ayuda a la gente y a las organizaciones a conectar con los "
+"mejores patrocinadores para sus eventos. Creemos en el patrocinio local y "
+"utilizamos nuestro complejo algoritmo para encontrar a los patrocinadores "
+"más próximos. Suscríbete para más información."
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:75
+msgid "Subscribe"
+msgstr "Suscribete"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:90
+msgid "Get"
+msgstr "Ponte"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:90
+msgid "in touch"
+msgstr "en contacto"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:102
+msgid "Your name"
+msgstr "Tu nombre"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:108
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:94
+msgid "Comments"
+msgstr "Comentarios"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:117
+msgid "Submit"
+msgstr "Enviar"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:33
+msgid "Eventorship | Find sporsors for your event"
+msgstr "Eventorship | Encuentra sponsors para tu evento"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:49
+msgid "Not a valid email address"
+msgstr "El email no es válido"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:66
+msgid "Your subscription is complete"
+msgstr "Tu suscripción se ha completado"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:71
+msgid "Your email already exists"
+msgstr "Tu email ya existe"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:82
+msgid "All fields are mandatory"
+msgstr "Todos los campos son obligatorios"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:88
+msgid "You have received a new contact request from Eventorship website."
+msgstr "Has recibido una nueva solicitud de contacto desde la web Eventorship."
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:90
+msgid "Name"
+msgstr "Nombre"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:92
+msgid "Email"
+msgstr "Email"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:123
+msgid "Contact request from Eventorship page"
+msgstr "Solicitud de contacto desde la web de Eventorship"
+
+#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:131
+msgid "Your contact request is sent. Thank you"
+msgstr "Se ha enviado tu solicitud. Gracias"
+
+#~ msgid "Your contact requests has been sent"
+#~ msgstr "Tu solicited ha side enviada"
