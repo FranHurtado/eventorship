@@ -6,8 +6,11 @@ var UserSchema = new mongoose.Schema({
   	email: String,
   	password: String,
   	birthdate: String,
-  	created_at : Date ,
-	updated_at : Date
+    city: { type: mongoose.Schema.ObjectId, ref: 'City'},
+    country: { type: mongoose.Schema.ObjectId, ref: 'Country'},
+    type: Number,
+  	created_at : Date,
+    updated_at : Date
 });
 
 UserSchema.pre('save', function(next){

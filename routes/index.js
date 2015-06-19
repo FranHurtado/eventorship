@@ -51,7 +51,7 @@ router.get('/:lang/terms-of-use.html', function(req, res, next) {
 */
 
 /* POST subscribe home page. */
-router.post('/:lang/subscribe.html', function(req, res, next) {
+router.post('/:lang/api/subscribe.html', function(req, res, next) {
 	var subscription = new Subscription(req.body);
 
 	//Check if email is valid email address
@@ -87,7 +87,7 @@ router.post('/:lang/subscribe.html', function(req, res, next) {
 });
 
 /* POST contact home page. */
-router.post('/:lang/contact.html', function(req, res, next) {
+router.post('/:lang/api/contact.html', function(req, res, next) {
 	//Check if all fields are completed
 	if(typeof req.body.name == "undefined" || typeof req.body.email == "undefined" || typeof req.body.comments == "undefined" || req.body.name == "" || req.body.email == "" || req.body.comments == "")
 	{

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-06-17 01:44+0100\n"
-"PO-Revision-Date: 2015-06-17 01:44+0100\n"
+"POT-Creation-Date: 2015-06-18 21:46+0100\n"
+"PO-Revision-Date: 2015-06-18 21:49+0100\n"
 "Last-Translator: Fran Hurtado <fhurtado@swapsee.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -14,23 +14,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/nodeapp/eventsApp\n"
-"X-Poedit-SearchPath-1: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes\n"
-"X-Poedit-SearchPath-2: /Applications/MAMP/htdocs/nodeapp/eventsApp/views\n"
-"X-Poedit-SearchPathExcluded-0: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/eventorship\n"
+"X-Poedit-SearchPath-1: /Applications/MAMP/htdocs/eventorship/routes\n"
+"X-Poedit-SearchPath-2: /Applications/MAMP/htdocs/eventorship/views\n"
+"X-Poedit-SearchPathExcluded-0: /Applications/MAMP/htdocs/eventorship/"
 "node_modules\n"
-"X-Poedit-SearchPathExcluded-1: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"X-Poedit-SearchPathExcluded-1: /Applications/MAMP/htdocs/eventorship/"
 "bootstrap\n"
-"X-Poedit-SearchPathExcluded-2: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
-"public\n"
-"X-Poedit-SearchPathExcluded-3: /Applications/MAMP/htdocs/nodeapp/eventsApp/"
+"X-Poedit-SearchPathExcluded-2: /Applications/MAMP/htdocs/eventorship/public\n"
+"X-Poedit-SearchPathExcluded-3: /Applications/MAMP/htdocs/eventorship/"
 "locales\n"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:13
+#: /Applications/MAMP/htdocs/eventorship/views/_menu.ejs:16
+msgid "Inicio"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/_menu.ejs:17
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:55
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:30
+msgid "Login"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:13
 msgid "Welcome to Eventorship"
 msgstr "Bienvenido a Eventorship"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:16
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:16
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:31
 msgid ""
 "Are you planing your next event but you need sponsors? Subscribe today and "
 "we help you to find them."
@@ -38,28 +48,31 @@ msgstr ""
 "¿Estas planeando tu evento pero necesitas patrocinadores? Suscríbete ahora y "
 "nosotros te ayudaremos a encontrarlos."
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:21
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:105
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:21
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:106
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:36
 msgid "Your email"
 msgstr "Tu email"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:28
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:28
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:43
 msgid "SUBSCRIBE"
 msgstr "SUSCRIBETE"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:53
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:53
 msgid "About"
 msgstr "Nosotros"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:54
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:54
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:49
 msgid "Contact"
 msgstr "Contacto"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:70
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:71
 msgid "Find the proper sponsors for your event"
 msgstr "Encuentra los patrocinadores adecuados para tu evento"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:72
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:73
 msgid ""
 "Eventorship helps people and organizations to connect with good sponsors for "
 "their events. We believe in local sponsorship so we use a complex algorythm "
@@ -70,68 +83,501 @@ msgstr ""
 "utilizamos nuestro complejo algoritmo para encontrar a los patrocinadores "
 "más próximos. Suscríbete para más información."
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:75
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:76
 msgid "Subscribe"
 msgstr "Suscribete"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:90
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:91
 msgid "Get"
 msgstr "Ponte"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:90
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:91
 msgid "in touch"
 msgstr "en contacto"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:102
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:103
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:108
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:94
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:109
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:106
 msgid "Comments"
 msgstr "Comentarios"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/views/index.ejs:117
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:118
 msgid "Submit"
 msgstr "Enviar"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:33
-msgid "Eventorship | Find sporsors for your event"
-msgstr "Eventorship | Encuentra sponsors para tu evento"
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:47
+msgid "Terms of use"
+msgstr ""
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:49
-msgid "Not a valid email address"
-msgstr "El email no es válido"
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:48
+msgid "Privacy policy"
+msgstr ""
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:66
-msgid "Your subscription is complete"
-msgstr "Tu suscripción se ha completado"
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:6
+msgid "Create new account"
+msgstr "Crear cuenta nueva"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:71
-msgid "Your email already exists"
-msgstr "Tu email ya existe"
-
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:82
-msgid "All fields are mandatory"
-msgstr "Todos los campos son obligatorios"
-
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:88
-msgid "You have received a new contact request from Eventorship website."
-msgstr "Has recibido una nueva solicitud de contacto desde la web Eventorship."
-
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:90
-msgid "Name"
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:12
+msgid "First name"
 msgstr "Nombre"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:92
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:15
+msgid "Last name"
+msgstr "Apellidos"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:20
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:104
 msgid "Email"
 msgstr "Email"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:123
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:25
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:17
+msgid "Password"
+msgstr "Contraseña"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:28
+msgid "Repeat password"
+msgstr "Repite la contraseña"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+msgid "Select profile type"
+msgstr "Selecciona el tipo de perfil"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+msgid "I want to organize events"
+msgstr "Quiero organizar eventos"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+msgid "I want to sponsor events"
+msgstr "Quiero patrocinar eventos"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:40
+msgid "Create account"
+msgstr "Crear una cuenta"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:6
+msgid "Welcome back! Please log in"
+msgstr "¡Nos alegramos de verte! Por favor identificate"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:12
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:23
+msgid "I want an account"
+msgstr "Quiero una cuenta"
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:24
+msgid "Forgot my password"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:13
+msgid ""
+"The User is aware of and consents to the existence of a personal data file "
+"under the  responsibility of Eventorship, in which the personal data that "
+"are provided to Eventorship by the User are stored, in accordance with the "
+"articles 5, 6 and 9 of the law 15/1999 of the 13th of December, \"Ley de "
+"Protección de Datos 1999\". "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:14
+msgid ""
+"The User is aware of and gives its consent to the use of data by Eventorship "
+"from the website and stored in a Users web browser while the User is "
+"browsing the website (\"Cookies\") for the purpose of improving and "
+"personalizing the services provided on the website, in  accordance with "
+"article 22.2 of the law 34/2002 of the 11th of July \"Ley de servicios de la "
+"sociedad de la  información y de comercio electrónico\". "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:15
+msgid ""
+"The User is  aware of his right, in accordance with article 5 of the law "
+"15/1999 of the 13th  of December, \"Ley de Protección de Datos 1999\", to "
+"access the stored data and  to request its rectification or annulment. The "
+"User has the right to object to the storage of data. Requests to access, "
+"rectification or annulment and  objections to the storage of their data can "
+"be directed to Eventorship at its  registered address at C/Señora sergia 2 "
+"(28250) Torrelodones, Madrid, Spain, or by way of e-mail directed to"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:16
+msgid ""
+"The User specifically states that he has been informed, in accordance  with "
+"article 5 of the law 15/1999 of the 13th of December, \"Ley de  Protección "
+"de Datos 1999\", as to which data Eventorship has required of  him as a "
+"condition for registration on the Website and which extra data have  been "
+"asked optionally."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:17
+msgid ""
+"Eventorship uses the personal data for administrative  purposes. Further, "
+"certain information given by User, specifically indicated on  the "
+"registration form, will be used to create a public profile which can be  "
+"accessed by all Users. The User is aware of and consents with this "
+"described  use of his personal data, all in accordance with article 5 and 11 "
+"of the law  15/1999 of the 13th of December, \"Ley de Protección de Datos "
+"1999\". Eventorship will further use the personal data in order to  make "
+"personalized offers to the User, either through the website or by way of  "
+"mailings."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:7
+msgid "TERMS OF USE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:12
+msgid "Definitions"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:13
+msgid ""
+"For the  purpose of these General Terms and Conditions this article defines "
+"the meaning  of the following terms and expressions:"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:15
+msgid ""
+"Eventorship: the company incorporated under the laws of  Spain, Eventorship, "
+"S.L"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:16
+msgid "General Conditions: these general terms and conditions"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:17
+msgid ""
+"Website: the website located at the domain … and/or  any other website owned "
+"or administered by Eventorship, S.L. and located at  a Spanish domain, "
+"including the tools provided on that website"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:18
+msgid "User: a person registered as a member of the Website"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:19
+msgid ""
+"Poster: a User that posts an advertisement for a Job or  a Skill to all or "
+"some Users or to one specific User"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:20
+msgid ""
+"Job: any service, regardless its juridical nature, requested  by a Poster "
+"and/or subject of a User Contract"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:21
+msgid ""
+"Skill: any skill or service, regardless its juridical  nature, offered by a "
+"Poster and/or subject of a User Contract"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:22
+msgid ""
+"User Contract: A contract entered into by Users regarding  one or various "
+"Jobs"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:23
+msgid "Swap: the payment of a Job by delivering another Job  in return"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:25
+msgid "General Stipulations"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:27
+msgid ""
+"Eventorship is  domiciled at C/Señora sergia 2(28250) Torrelodones, Madrid, "
+"Spain. (N.I.F.) 73196795P."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:28
+msgid ""
+"The  General Conditions apply whenever a User makes use of the Website and "
+"they apply  to the complete legal relationship between Eventorship and "
+"Users, including all  services delivered by Eventorship to a User and their "
+"payment by the User to  Eventorship."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:29
+msgid ""
+"Users have  accepted these General Terms and Condition upon clicking the "
+"submit button  during the registration process."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:30
+msgid ""
+"If any  clause of the General Conditions is declared null and void or "
+"invalid by court  sentence, this shall not affect the validity and "
+"enforceability of those  clauses not affected by said declaration of nullity "
+"or invalidity."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:32
+msgid "Use of the website"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:34
+msgid ""
+"The User is not  allowed to violate any laws, third party rights or the "
+"General Conditions,  whether by posting Jobs, making offers, enter into User "
+"Contracts or in any  other way using the Website. The User is obliged to "
+"fulfill any tax obligation  and any other obligation towards government "
+"authorities arising from the use of  this website and the entering into User "
+"Agreements."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:35
+msgid ""
+"The User is not  allowed to use the Website when he or she is not able to "
+"form legally binding  contracts."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:36
+msgid ""
+"The User is not  allowed to circumvent or manipulate the fee structure or "
+"the billing process of  Eventorship. The User is not allowed to transfer his "
+"Eventorship account to another  party."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:37
+msgid ""
+"The User is not  allowed to post false, inaccurate, misleading, defamatory, "
+"or libelous content."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:38
+msgid ""
+"The User is not  allowed to distribute viruses or any other technologies "
+"that may harm Eventorship,  the Website , or the interests or property of "
+"other Users to harvest or  otherwise collect information about Users, "
+"including email addresses, without  their consent or to distribute or post "
+"spam, unsolicited or bulk electronic  communications apart from the Posting "
+"of offers by way of filling out the  appropriate forms."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:39
+msgid ""
+"The User is not  allowed to copy, modify, or distribute rights or content "
+"from the Website."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:41
+msgid "Jobs and Skills: User Contracts"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:43
+msgid ""
+"User Contracts are  entered into by Users and have as subject the rendering "
+"of a certain Job in  exchange for money or a Job in return (Swap)."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:44
+msgid ""
+"In case a price  in money is agreed, the User Contract is materialized by:"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:46
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:52
+msgid ""
+"the posting of a  Job by a User to all or some Users or to one specific "
+"User, "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:47
+msgid "a consequent  offer in money regarding that Job by another User and"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:48
+msgid "the consequent acceptance  of this offer by the Poster."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:50
+msgid "In case a Swap  is agreed, the User Contract is materialized by:"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:53
+msgid ""
+"a consequent  offer regarding that Job and the proposal of a Job in return "
+"by another User, "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:54
+msgid ""
+"the acceptance  of the proposed Job or Skill in return by the original poster"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:55
+msgid ""
+"As long as an  offer has not been accepted, a User is allowed to modify its "
+"original post.  Modifying a post renders earlier offers regarding that post "
+"invalid."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:56
+msgid ""
+"Once the Job(s)  subject of the User Contract is/are performed, the "
+"Performer(s) send a message  of completion to the other Party. If a price in "
+"money is agreed upon payment  takes place within 10 days after the message "
+"of completion has been sent. "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:57
+msgid ""
+"Upon completion,  Parties will post an accurate review of the Job on the "
+"website."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:60
+msgid "Subscription and Payment"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:62
+msgid ""
+"Users pay Eventorship for using the website at a certain moment during the "
+"posting and allocation process. Prices may vary and details are available on "
+"the website. These prices and details can be changed with a month's notice."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:63
+msgid ""
+"Users also pay Eventorship to place their jobs and skills in a special "
+"promotional section of the website. Prices may vary and details are "
+"available on the website. These prices and details can be changed with a "
+"month's notice."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:64
+msgid ""
+"Eventorship might offer Users different account types. Prices may vary and "
+"details are available on the website. These prices and details can be "
+"changed with a month's notice."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:66
+msgid "Conflicts regarding Users"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:68
+msgid ""
+"In case a  conflict arises between Users, both Users can report the issue to "
+"Eventorship. Upon  request by both or either User, Eventorship will mediate "
+"between Users and offer  the solution to the conflict it deems appropriate. "
+"Neither the mediation nor  the proposed solution is in any way binding to "
+"parties and does not prevent Users  from taking any other legal action they "
+"deem fit."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:70
+msgid "Suspension of Users, deleting of messages"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:72
+msgid ""
+"Eventorship has the right in its  sole discretion to suspend a User, "
+"temporarily of indefinitely, to limit,  suspend, or terminate services and "
+"User accounts, to prohibit access to the Website,  to delay or remove hosted "
+"content, and to take technical and legal steps to  keep a User from using "
+"the website in case it considers that this User has violated  the General "
+"Conditions or in any way does not comply with its contractual  obligations "
+"towards Eventorship or other Users."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:74
+msgid "Liability"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:76
+msgid ""
+"Eventorship is not responsible for the contents of the  messages posted by "
+"Users on this website, the (non)fulfillment of User Contracts,  the damages "
+"caused by default of the obligations arising from the User  Contracts or the "
+"(non)fulfillment of tax or any other legal obligations  by its Users. "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:77
+msgid ""
+"Eventorship waives liability for damages as a consequence  of the use of the "
+"Website, delays or disruptions in the Website and Viruses or other malicious "
+"software obtained by  accessing the website. "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:78
+msgid ""
+"Users shale indemnify and hold Eventorship harmless from all  claims, costs, "
+"proceedings, demands, losses, expenses and liabilities resulting  from the "
+"contents of the messages they have posted on the website, defaulting  in "
+"their contractual obligations or the non-fulfillment of their tax or any  "
+"other legal obligations."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:80
+msgid "Jurisdiction and Applicable law"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:82
+msgid ""
+"All  disputes between Eventorship and Users shall be settled only by the "
+"courts of  Barcelona, Spain. Users hereby expressly submit to its competence "
+"and  jurisdiction, excluding the compentence of any other court."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/terms-of-use.ejs:83
+msgid ""
+"The use of  this website and any contract constituted between Eventorship "
+"and Users and any  contract between Users constituted by making use of the "
+"Website are governed by  Spanish Law."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:33
+msgid "Eventorship | Find sporsors for your event"
+msgstr "Eventorship | Encuentra sponsors para tu evento"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:39
+msgid "Eventorship | Privacy policy"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:45
+msgid "Eventorship | Terms of use"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:61
+msgid "Not a valid email address"
+msgstr "El email no es válido"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:78
+msgid "Your subscription is complete"
+msgstr "Tu suscripción se ha completado"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:83
+msgid "Your email already exists"
+msgstr "Tu email ya existe"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:94
+msgid "All fields are mandatory"
+msgstr "Todos los campos son obligatorios"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:100
+msgid "You have received a new contact request from Eventorship website."
+msgstr "Has recibido una nueva solicitud de contacto desde la web Eventorship."
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:102
+msgid "Name"
+msgstr "Nombre"
+
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:135
 msgid "Contact request from Eventorship page"
 msgstr "Solicitud de contacto desde la web de Eventorship"
 
-#: /Applications/MAMP/htdocs/nodeapp/eventsApp/routes/index.js:131
+#: /Applications/MAMP/htdocs/eventorship/routes/index.js:143
 msgid "Your contact request is sent. Thank you"
 msgstr "Se ha enviado tu solicitud. Gracias"
 

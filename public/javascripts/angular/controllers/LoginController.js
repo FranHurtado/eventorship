@@ -7,11 +7,10 @@ app.controller('LoginController', ['$http', '$location', function ($http, $locat
 		var lang = $location.absUrl().split('/')[3];
 		//Send data to the server
 		var postdata = {
-			name     : this.name, 
-			email    : this.email,
-			comments : this.comments
+			username : this.username, 
+			password : this.password,
 		};
-		$http.post('/' + lang + '/login.html', postdata).success(function(data){
+		$http.post('/' + lang + '/api/login.html', postdata).success(function(data){
 			loginCtrl.status = data.status;
 			loginCtrl.message = data.message;
 			//If not error clean form
@@ -23,5 +22,7 @@ app.controller('LoginController', ['$http', '$location', function ($http, $locat
 			}
 		});
 	};
+
+	
     
 }]);

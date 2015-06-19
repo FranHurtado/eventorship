@@ -11,7 +11,7 @@ app.controller('ContactController', ['$http', '$location', function ($http, $loc
 			email    : this.email,
 			comments : this.comments
 		};
-		$http.post('/' + lang + '/contact.html', postdata).success(function(data){
+		$http.post('/' + lang + '/api/contact.html', postdata).success(function(data){
 			contactCtrl.status = data.status;
 			contactCtrl.message = data.message;
 			//If not error clean form

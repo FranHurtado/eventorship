@@ -11,12 +11,16 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/User');
 require('./models/Subscription');
+require('./models/Country');
+require('./models/City');
 mongoose.connect('mongodb://localhost/eventsApp');
 
 var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var countries = require('./routes/countries');
+var cities = require('./routes/cities');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +45,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/', users);
+app.use('/', countries);
+app.use('/', cities);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
