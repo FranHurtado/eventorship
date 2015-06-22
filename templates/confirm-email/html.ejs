@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<link href="<%= siteRoot %>/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style>
+		* { margin:0; padding:0; }
+
+		img { 
+			max-width: 100%; 
+		}
+
+		body {
+			font-family: "Lato", "Serif";
+			font-weight: 300;
+			padding:0;
+			margin:0;
+			font-size:16px;
+			line-height: 28px;
+			color: #777; 
+			background: #fff;
+			width: 100%!important; 
+			height: 100%;
+		}
+
+		p, ul { 
+		margin-bottom: 10px; 
+		font-weight: normal; 
+		font-size:14px; 
+		line-height:1.6;
+		}
+
+		</style>
+		<title>Eventorship Email</title>
+	</head>
+	 
+	<body bgcolor="#FFFFFF">
+		<!-- HEADER -->
+		<div style="width:100%;background-color:#3eb0f7;display:block;">
+			<div class="row" style="max-width:600px; margin:0 auto; display:block;">
+				<p style="font-size:28px;color:#ffffff;padding:0.5em 0;margin:0!important;">Eventorship</p>
+			</div>
+		</div>
+		<!-- /HEADER -->
+		<!-- BODY -->
+		<table style="width: 100%;">
+			<tr>
+				<td></td>
+				<td class="container" bgcolor="#FFFFFF">
+					<div style="padding-top:30px; max-width:600px; margin:0 auto; display:block;">
+						<table width="100%">
+							<tr><td>
+								<p style="font-size:16px;margin-bottom:10px;font-weight:normal;line-height:1.6;">
+									<%= introText %>
+								</p>				
+								<!-- Callout Panel -->
+								<div style="padding-top:10px;padding-bottom:10px;width:100%;">		
+									<table width="100%">
+										<tr><td>
+											<a href="<%= siteRoot %><%= lang %>/user/<%= account_id %>/validate.html" style="font-size:16px;text-align:center;text-decoration:none;font-weight:bold;padding:10px 20px 10px 20px;background-color:#3eb0f7;color:#fff;display:inline-block;">
+												<%= btnLabel %>
+											</a>
+										</td></tr>
+									</table>	
+								</div>
+								<!-- /Callout Panel -->
+								<p style="margin-bottom:10px;margin-top:10px;font-weight:normal;font-size:16px;line-height:1.6;">
+									<%= email_signature %>
+								</p>					
+							</td></tr>
+						</table>
+					</div>						
+				</td>
+				<td></td>
+			</tr>
+		</table>
+		<!-- /BODY -->
+		<!-- FOOTER -->
+		<table style="width: 100%;border-top:1px solid #e5e5e5;clear:both!important;margin-top:30px;">
+			<tr>
+				<td></td>
+				<td style="display:block!important; max-width:600px!important; margin:0 auto!important; clear:both!important;">
+					<div style="max-width:600px; margin:0 auto; display:block; text-align: center;">
+						<table>
+							<tr>
+								<td align="center">
+									<p style="padding-top:0.5em;">
+										<%= footer_text %>
+										<a href="<%= siteRoot %><%= lang %>/user/<%= account_id %>/unsubscribe.html">
+											<%= footer_btn %>
+										</a>
+									</p>
+								</td>
+							</tr>
+						</table>
+					</div>		
+				</td>
+				<td></td>
+			</tr>
+		</table>
+		<!-- /FOOTER -->
+	</body>
+</html>

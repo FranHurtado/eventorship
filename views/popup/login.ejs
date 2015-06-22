@@ -1,4 +1,4 @@
-<div class="modal fade" id="popupLogin" role="dialog" ng-controller="LoginController as loginCtrl">
+<div class="modal fade" id="popupLogin" role="dialog">
   	<div class="modal-dialog">
     	<div class="modal-content">
       		<div class="modal-header">
@@ -6,17 +6,20 @@
         		<h4 class="modal-title"><%= __('Welcome back! Please log in') %></h4>
       		</div>
       		<div class="modal-body">
-      			<form name="loginForm" id="login-form" ng-controller="LoginController as loginCtrl" ng-submit="loginCtrl.login()" novalidate>
+      			<form name="loginForm" id="login-form" ng-submit="mainCtrl.login()" novalidate>
 	        		<div class="row row-form">
 	        			<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-	        				<input ng-model="loginCtrl.username" class="form-control" type="text" name="username" placeholder="<%= __('Username') %>" required />
+	        				<input ng-model="mainCtrl.username" class="form-control" type="text" name="username" placeholder="<%= __('Username') %>" required />
 	        			</div>
 	        		</div>
 	        		<div class="row row-form">
 		        		<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-		        			<input ng-model="loginCtrl.password" class="form-control" type="password" name="password" placeholder="<%= __('Password') %>" required />
+		        			<input ng-model="mainCtrl.password" class="form-control" type="password" name="password" placeholder="<%= __('Password') %>" required />
 		        		</div>
 		        	</div>
+					<p ng-show="mainCtrl.loginStatus==1" class="text-center" style="font-size: 1.1em; margin-top: 0.5em;">
+						<span class="label label-danger">{{mainCtrl.loginMessage}}</span>
+					</p>
 		        	<div class="row row-form">
 		        		<div class="col-xs-12 col-sm-6 col-sm-offset-3"> 
 		        			<p class="text-center" style="font-size: 0.8em;">

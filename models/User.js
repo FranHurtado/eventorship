@@ -5,10 +5,12 @@ var UserSchema = new mongoose.Schema({
   	lastname: String,
   	email: String,
   	password: String,
+    token: String,
   	birthdate: String,
     city: { type: mongoose.Schema.ObjectId, ref: 'City'},
     country: { type: mongoose.Schema.ObjectId, ref: 'Country'},
     type: Number,
+    status: { type: Number, default: 0 }, //Default deactivated until confirmation email
   	created_at : Date,
     updated_at : Date
 });

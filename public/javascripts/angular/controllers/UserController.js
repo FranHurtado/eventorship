@@ -11,7 +11,6 @@ app.controller('UserController', ['$http', '$location', '$scope', function ($htt
 	});
 
 	this.loadCities = function(){
-		console.debug(userCtrl.user.country);
 		var postdata = { country_id : userCtrl.user.country };
 		$http.post('/' + lang + '/api/city/list.html', postdata).success(function(data){
 			userCtrl.cities = data;

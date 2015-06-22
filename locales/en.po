@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2015-06-18 21:50+0100\n"
-"PO-Revision-Date: 2015-06-18 21:50+0100\n"
+"POT-Creation-Date: 2015-06-22 13:06+0100\n"
+"PO-Revision-Date: 2015-06-22 13:07+0100\n"
 "Last-Translator: Fran Hurtado <fhurtado@swapsee.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -31,7 +31,12 @@ msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/views/_menu.ejs:17
 #: /Applications/MAMP/htdocs/eventorship/views/index.ejs:55
-#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:30
+msgid "Logout"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/_menu.ejs:18
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:56
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:33
 msgid "Login"
 msgstr ""
 
@@ -47,7 +52,7 @@ msgid ""
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/views/index.ejs:21
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:106
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:107
 #: /Applications/MAMP/htdocs/eventorship/views/privacy-policy.ejs:36
 msgid "Your email"
 msgstr ""
@@ -62,51 +67,51 @@ msgid "About"
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/views/index.ejs:54
-#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:49
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:48
 msgid "Contact"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:71
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:72
 msgid "Find the proper sponsors for your event"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:73
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:74
 msgid ""
 "Eventorship helps people and organizations to connect with good sponsors for "
 "their events. We believe in local sponsorship so we use a complex algorythm "
 "to find sponsors inside your community. Subscribe for more information."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:76
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:77
 msgid "Subscribe"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:91
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:92
 msgid "Get"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:91
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:92
 msgid "in touch"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:103
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:104
 msgid "Your name"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:109
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:110
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:106
 msgid "Comments"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:118
+#: /Applications/MAMP/htdocs/eventorship/views/index.ejs:119
 msgid "Submit"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:47
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:46
 msgid "Terms of use"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:48
+#: /Applications/MAMP/htdocs/eventorship/views/layout.ejs:47
 msgid "Privacy policy"
 msgstr ""
 
@@ -114,41 +119,53 @@ msgstr ""
 msgid "Create new account"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:12
-msgid "First name"
-msgstr ""
-
 #: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:15
-msgid "Last name"
+msgid "Close"
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:20
+msgid "First name"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:23
+msgid "Last name"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:28
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:104
 msgid "Email"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:25
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
 #: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:17
 msgid "Password"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:28
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:36
 msgid "Repeat password"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:41
+msgid "Select country"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:44
+msgid "Select city"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:49
 msgid "Select profile type"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:49
 msgid "I want to organize events"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:33
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:49
 msgid "I want to sponsor events"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:40
+#: /Applications/MAMP/htdocs/eventorship/views/popup/create-user.ejs:61
 msgid "Create account"
 msgstr ""
 
@@ -160,11 +177,11 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:23
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:26
 msgid "I want an account"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:24
+#: /Applications/MAMP/htdocs/eventorship/views/popup/login.ejs:27
 msgid "Forgot my password"
 msgstr ""
 
@@ -531,6 +548,44 @@ msgid ""
 "Website are governed by  Spanish Law."
 msgstr ""
 
+#: /Applications/MAMP/htdocs/eventorship/views/user/index.ejs:5
+msgid "USER INDEX"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/user/login.ejs:5
+msgid "LOGIN PLEASE"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/user/validate.ejs:5
+msgid "ACCOUNT CONFIRMATION"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/views/user/validate.ejs:10
+msgid ""
+"Congratulations! Your account has been activated. Now you can enjoy all the "
+"features of Eventorship."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/app.js:52
+msgid "User not valid"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/app.js:57
+msgid "Password not valid"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/config.js:16
+msgid "If you want to stop receiving this emails. Please click "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/config.js:17
+msgid "unsubscribe"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/config.js:18
+msgid "Thanks! Eventorship's team"
+msgstr ""
+
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:33
 msgid "Eventorship | Find sporsors for your event"
 msgstr ""
@@ -544,6 +599,7 @@ msgid "Eventorship | Terms of use"
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:61
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:76
 msgid "Not a valid email address"
 msgstr ""
 
@@ -552,10 +608,12 @@ msgid "Your subscription is complete"
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:83
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:158
 msgid "Your email already exists"
 msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:94
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:72
 msgid "All fields are mandatory"
 msgstr ""
 
@@ -573,4 +631,30 @@ msgstr ""
 
 #: /Applications/MAMP/htdocs/eventorship/routes/index.js:143
 msgid "Your contact request is sent. Thank you"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:80
+msgid "Password and confirmation are not the same"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:103
+msgid "Hi "
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:104
+msgid "Confirm your account"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:137
+msgid "Please confirm your account at Eventorship"
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:152
+msgid ""
+"Congratulations! Your account has been created. Check you email to confirm "
+"registration. Also, we recommend you to check your SPAM folder just in case."
+msgstr ""
+
+#: /Applications/MAMP/htdocs/eventorship/routes/users.js:176
+msgid "Please enter user and password"
 msgstr ""

@@ -6894,14 +6894,20 @@ ol li {
 }
 .navbar-default {
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0px 0.5px 2px #cecece;
+  box-shadow: 0px 0.5px 6px #cecece;
 }
-.navbar-default .navbar-brand {
-  padding: 7px;
+.navbar-default .navbar-brand,
+.navbar-default .navbar-collapse {
+  padding: 12px 0;
+  height: auto!important;
+}
+.navbar-default .navbar-toggle {
+  margin: 1.5em 1em;
 }
 .navbar-default .navbar-nav > li > a {
   color: #777;
   font-weight: 500;
+  line-height: 2em;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -6978,15 +6984,10 @@ ol li {
   color: white;
 }
 .site-name img {
-  width: 150px;
-  height: 37px;
+  max-width: 280px;
 }
 .logo {
   margin: 100px 0 40px 0;
-}
-.logo img {
-  width: 150px;
-  height: 37px;
 }
 .landing .overlay {
   padding: 8em 0 15em 0;
@@ -7727,6 +7728,9 @@ ol li {
 }
 /* smart-phone ----------- */
 @media (max-width: 767px) {
+  .navbar-default .navbar-brand {
+    padding: 12px 0 12px 12px;
+  }
   .logo {
     margin: 40px 0 30px 0;
   }
@@ -7890,6 +7894,12 @@ ol li {
 }
 /* iPhone 4 (landscape) ----------- */
 @media (max-width: 480px) {
+  .site-name img {
+    max-width: 220px !important;
+  }
+  .navbar-toggle {
+    margin: 1.2em 1em !important;
+  }
   .feat-list i {
     padding-left: 5px;
   }

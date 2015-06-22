@@ -1,7 +1,32 @@
-app.controller('MainController', ['$location', function ($location){
+app.controller('MainController', ['$location', '$http', '$window', function ($location, $http, $window){
 
 	var mainCtrl = this;
 	mainCtrl.lang = $location.absUrl().split('/')[3];
+
+    $http.get('/api/user/islogged.html').success(function(data){
+        mainCtrl.islogged = data.result;
+    });
+
+    this.login = function(){
+        //Get language code from url
+        var lang = $location.absUrl().split('/')[3];
+        //Send data to the server
+        var postdata = {
+                username : mainCtrl.username, 
+                password : mainCtrl.password,
+        };
+        $http.post('/' + lang + '/api/user/login.html', postdata).success(function(data){
+            if(data.status == 0)
+            {
+                $window.location.href=$location.absUrl();
+            }
+            else
+            {
+                mainCtrl.loginStatus = data.status;
+                mainCtrl.loginMessage = data.message;
+            }
+        });
+    };
     
 }]);
 
