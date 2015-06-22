@@ -190,7 +190,7 @@ router.post('/:lang/api/user/login.html', function(req, res, next) {
 
 // GET JSON is user logged
 router.get('/api/user/islogged.html', function(req, res, next) {
-    res.json({'result' : req.isAuthenticated(), 'user' : "user" + req.user});
+    res.json({'result' : req.isAuthenticated(), 'user' : req.user});
 });
 
 module.exports = router;

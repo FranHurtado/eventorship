@@ -2,9 +2,11 @@ app.controller('MainController', ['$location', '$http', '$window', function ($lo
 
 	var mainCtrl = this;
 	mainCtrl.lang = $location.absUrl().split('/')[3];
+    mainCtrl.userLogged = null;
 
     $http.get('/api/user/islogged.html').success(function(data){
         mainCtrl.islogged = data.result;
+        mainCtrl.userLogged = data.user;
     });
 
     this.login = function(){
@@ -13,7 +15,7 @@ app.controller('MainController', ['$location', '$http', '$window', function ($lo
         //Send data to the server
         var postdata = {
                 username : mainCtrl.username, 
-                password : mainCtrl.password,
+                password : mainCtrl.password
         };
         $http.post('/' + lang + '/api/user/login.html', postdata).success(function(data){
             if(data.status == 0)
