@@ -16,16 +16,25 @@ var User = mongoose.model('User');
 
 // GET user login
 router.get('/:lang/user/login.html', function(req, res, next) {
+    // Save user track
+    saveUserTrack(req);
+
     res.render('user/login', { title: 'User login', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 // GET user list
 router.get('/:lang/user/list.html', ensureAuthenticated, function(req, res, next) {
+    // Save user track
+    saveUserTrack(req);
+
     res.render('user/index', { title: 'User list', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 //GET create user form
 router.get('/:lang/user/create.html', function(req, res, next) {
+    // Save user track
+    saveUserTrack(req);
+
     res.render('user/create', { title: 'Create user', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
@@ -37,11 +46,18 @@ router.get('/:lang/user/:id/validate.html', function(req, res, next) {
         userData.status = 1;
         userData.save();
     });
+
+    // Save user track
+    saveUserTrack(req);
+
     res.render('user/validate', { title: 'Validate user', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 // GET logout user
 router.get('/:lang/user/logout.html', function(req, res){
+    // Save user track
+    saveUserTrack(req);
+
     req.logout();
     res.redirect('/' + req.params.lang);
 });
@@ -193,4 +209,14 @@ router.get('/api/user/islogged.html', function(req, res, next) {
     res.json({'result' : req.isAuthenticated(), 'user' : req.user});
 });
 
+
+function saveUserTrack(req)
+{
+    usertrack = new UserTrack();
+    usertrack.user = typeof req.user != "undefined" ? req.user._id : null;
+    usertrack.url = req.get('host') + req.originalUrl;
+    usertrack.ip = req.ip + " | " + req.ips;
+    usertrack.user_agent = req.headers['user-agent'];
+    usertrack.save();
+}
 module.exports = router;

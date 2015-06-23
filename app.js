@@ -13,6 +13,7 @@ LocalStrategy = require('passport-local').Strategy;
 // Load models and conect to mongodb
 var mongoose = require('mongoose');
 require('./models/User');
+require('./models/UserTrack');
 require('./models/Subscription');
 require('./models/Country');
 require('./models/City');

@@ -7,6 +7,7 @@ var path = require('path');
 var templatesDir   = path.resolve(__dirname, '..', 'templates');
 var smtpTransport = require('nodemailer-smtp-transport');
 var Subscription = mongoose.model('Subscription');
+var UserTrack = mongoose.model('UserTrack');
 var config = new Array();
 config['company'] = 'Eventorship';
 config['adminemail'] = 'info@eventorship.com';
@@ -26,22 +27,34 @@ config['emailtls'] = false;
 router.get('/', function(req, res, next) {
 	var preferredLanguage = req.headers["accept-language"].substring(0, 2);
 	preferredLanguage = preferredLanguage == "en" ? "en" : (preferredLanguage == "es" ? "es" : "en");
+	// Save user track
+	saveUserTrack(req);
+
 	res.redirect('/' + preferredLanguage);
 });
 router.get('/:lang/', function(req, res, next) {
 	res.setLocale(req.params.lang);
+	// Save user track
+	saveUserTrack(req);
+
 	res.render('index', { title: res.__('Eventorship | Find sporsors for your event'), lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 /* GET privacy-policy page. */
 router.get('/:lang/privacy-policy.html', function(req, res, next) {
 	res.setLocale(req.params.lang);
+	// Save user track
+	saveUserTrack(req);
+
 	res.render('privacy-policy', { title: res.__('Eventorship | Privacy policy'), lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 /* GET terms of use page. */
 router.get('/:lang/terms-of-use.html', function(req, res, next) {
 	res.setLocale(req.params.lang);
+	// Save user track
+	saveUserTrack(req);
+
 	res.render('terms-of-use', { title: res.__('Eventorship | Terms of use'), lang : req.params.lang, _layoutFile: 'layout' });
 });
 
@@ -149,5 +162,16 @@ router.post('/:lang/api/contact.html', function(req, res, next) {
 		});
 	}
 });
+
+
+function saveUserTrack(req)
+{
+	usertrack = new UserTrack();
+	usertrack.user = typeof req.user != "undefined" ? req.user._id : null;
+	usertrack.url = req.get('host') + req.originalUrl;
+	usertrack.ip = req.ip + " | " + req.ips;
+	usertrack.user_agent = req.headers['user-agent'];
+	usertrack.save();
+}
 
 module.exports = router;
