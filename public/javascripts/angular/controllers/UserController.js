@@ -20,6 +20,23 @@ app.controller('UserController', ['$http', '$location', '$scope', function ($htt
 		});
 	};
 
+	this.loadUser = function(){
+		//Get user id from url
+        var id = $location.absUrl().split('/')[5];
+        var postdata = { id : id };
+
+        $http.post('/' + lang + '/api/user/get.html', postdata).success(function(data){
+            userCtrl.user = data;
+            userCtrl.user.city.getname = userCtrl.user.city[lang].name;
+            userCtrl.user.country.getname = userCtrl.user.country[lang].name;
+            var loadCities = setInterval(function(){
+                userCtrl.loadCities(true);
+                clearInterval(loadCities);
+            }, 500);
+            
+        });
+	};
+
 	this.create = function(){
 		//Get language code from url
 		var lang = $location.absUrl().split('/')[3];

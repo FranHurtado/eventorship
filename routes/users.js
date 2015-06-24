@@ -31,6 +31,14 @@ router.get('/:lang/user/list.html', ensureAuthenticated, function(req, res, next
     res.render('user/index', { title: 'User list', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
+// GET user profile
+router.get('/:lang/user/:id/profile.html', ensureAuthenticated, function(req, res, next) {
+    // Save user track
+    saveUserTrack(req);
+
+    res.render('user/profile', { title: 'User profile', lang : req.params.lang, _layoutFile: 'layout' });
+});
+
 //GET create user form
 router.get('/:lang/user/create.html', function(req, res, next) {
     // Save user track

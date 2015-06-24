@@ -1,0 +1,13 @@
+ <%- include ../_menu.ejs %>
+
+<div id="single-page" ng-controller="UserController as userCtrl" ng-init="userCtrl.loadUser()">
+	<div class="container">
+		<h2 class="wow fadeInLeft">{{ userCtrl.user.firstname | uppercase}} {{ userCtrl.user.lastname | uppercase}}</h2>
+		<div class="title-line-left wow fadeInRight"></div>	
+		<p>{{ userCtrl.user.city.getname }} ({{ userCtrl.user.country.getname }})</p>	  
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container">
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->
