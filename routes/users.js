@@ -8,6 +8,7 @@ var templatesDir   = path.resolve(__dirname, '..', 'templates');
 var smtpTransport = require('nodemailer-smtp-transport');
 var sha1 = require('sha1');
 var User = mongoose.model('User');
+var UserTrack = mongoose.model('UserTrack');
 
 
 /*
@@ -116,67 +117,63 @@ router.post('/:lang/api/user/create.html', function(req, res, next) {
             {
                 var user = new User(req.body);
                 user.password = sha1(user.password);
-                user.save(function(err, user){
-                    //Generate toke for auth
-                    user.token = jwt.sign(user, token-secret);
-                    user.save(function(err, post){
-                        if(err){ return next(err); }
+                user.save(function(err, post){
+                    if(err){ return next(err); }
 
-                        //Send confirmation email
-                        var data = {
-                            siteRoot        : siteRoot,
-                            lang            : req.params.lang,
-                            introText       : res.__('Hi ' + post.firstname + " " + post.lastname + "! Please confirm your account clicking on the button."),
-                            btnLabel        : res.__('Confirm your account'),
-                            account_id      : post._id,
-                            email_signature : config['emailSignature'],
-                            footer_text     : config['emailFooterText'],
-                            footer_btn      : config['emailFooterButton']
+                    //Send confirmation email
+                    var data = {
+                        siteRoot        : siteRoot,
+                        lang            : req.params.lang,
+                        introText       : res.__('Hi ' + post.firstname + " " + post.lastname + "! Please confirm your account clicking on the button."),
+                        btnLabel        : res.__('Confirm your account'),
+                        account_id      : post._id,
+                        email_signature : config['emailSignature'],
+                        footer_text     : config['emailFooterText'],
+                        footer_btn      : config['emailFooterButton']
+                    }
+
+                    var transporter = nodemailer.createTransport(smtpTransport({
+                        host       : config['emailserver'],
+                        port       : config['emailport'],
+                        secure     : config['emailssl'],
+                        tls        : { 
+                                        rejectUnauthorized: config['emailtls']
+                        },
+                        auth       : {
+                                        user: config['emailuser'],
+                                        pass: config['emailpass']
+                        },
+                        authMethod : config['emailauthtype']
+                    }));
+
+                    //Build template and send message
+                    emailTemplates(templatesDir, function(err, template) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            template('confirm-email', data, function(err, html, text) {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    transporter.sendMail({
+                                        from: config['company'] + ' <' + config['emailuser'] + '>',
+                                        to: post.email,
+                                        subject: res.__('Please confirm your account at Eventorship'),
+                                        html: html,
+                                        text: text
+                                    }, function(err, responseStatus) {
+                                        if (err) {
+                                            console.log(err);
+                                        } else {
+                                            console.log(responseStatus.message);
+                                        }
+                                    });
+                                }
+                            });
                         }
-
-                        var transporter = nodemailer.createTransport(smtpTransport({
-                            host       : config['emailserver'],
-                            port       : config['emailport'],
-                            secure     : config['emailssl'],
-                            tls        : { 
-                                            rejectUnauthorized: config['emailtls']
-                            },
-                            auth       : {
-                                            user: config['emailuser'],
-                                            pass: config['emailpass']
-                            },
-                            authMethod : config['emailauthtype']
-                        }));
-
-                        //Build template and send message
-                        emailTemplates(templatesDir, function(err, template) {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                template('confirm-email', data, function(err, html, text) {
-                                    if (err) {
-                                        console.log(err);
-                                    } else {
-                                        transporter.sendMail({
-                                            from: config['company'] + ' <' + config['emailuser'] + '>',
-                                            to: post.email,
-                                            subject: res.__('Please confirm your account at Eventorship'),
-                                            html: html,
-                                            text: text
-                                        }, function(err, responseStatus) {
-                                            if (err) {
-                                                console.log(err);
-                                            } else {
-                                                console.log(responseStatus.message);
-                                            }
-                                        });
-                                    }
-                                });
-                            }
-                        });
-
-                        res.json({'status' : '0', 'message' : res.__('Congratulations! Your account has been created. Check you email to confirm registration. Also, we recommend you to check your SPAM folder just in case.')});
                     });
+
+                    res.json({'status' : '0', 'message' : res.__('Congratulations! Your account has been created. Check you email to confirm registration. Also, we recommend you to check your SPAM folder just in case.')});
                 });
             }
             else

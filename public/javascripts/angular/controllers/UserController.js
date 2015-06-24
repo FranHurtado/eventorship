@@ -32,7 +32,7 @@ app.controller('UserController', ['$http', '$location', '$scope', function ($htt
 			password2 : this.user.password2,
 			city      : this.user.city,
 			country   : this.user.country,
-			type      : this.user.type
+			profile   : this.user.profile
 		};
 		$http.post('/' + lang + '/api/user/create.html', postdata).success(function(data){
 			userCtrl.status = data.status;
