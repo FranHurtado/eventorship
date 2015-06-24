@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Country = mongoose.model('Country');
+var Profile = mongoose.model('Profile');
 
 /*
 ** HTML routes **
@@ -14,14 +14,14 @@ var Country = mongoose.model('Country');
 */
 
 /* POST subscribe home page. */
-router.get('/:lang/api/country/list.html', function(req, res, next) {
-	Country.find(function(err, posts){
+router.get('/:lang/api/profile/list.html', function(req, res, next) {
+	Profile.find(function(err, posts){
         if(err){ return next(err); }
 
         var results = new Array();
         var text = "";
         posts.forEach(function(item) {
-        	results.push({"id" : item._id, "text" : item[req.params.lang].name});
+        	results.push({"id" : item._id, "text" : item[req.params.lang].description});
             //Order array alphabetically
             results.sort(function(a,b)
             {

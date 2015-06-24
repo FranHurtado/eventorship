@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 var CitySchema = new mongoose.Schema({
-	name : [{ lang: String, text: String }],
+	en : { name: String },
+	es : { name: String },
 	country : {type: mongoose.Schema.ObjectId}
 });
 

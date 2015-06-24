@@ -7011,6 +7011,28 @@ ol li {
   background: #1f96e0;
   color: white;
 }
+.btn-dark {
+  font-size: 1em;
+  margin: 1em 0 0.5em;
+  margin-right: 0.3em;
+  line-height: 1.6em;
+  padding: 0.7em 1.6em;
+  border: 2px solid #999;
+  background: #999;
+  transition: all 0.4s;
+  color: white;
+  border-radius: 100px;
+  display: inline-block;
+}
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active,
+.btn-dark.active,
+.open > .dropdown-toggle.btn-dark {
+  border: 2px solid #999;
+  background: transparent;
+  color: #999;
+}
 .site-name img {
   max-width: 300px;
   padding-top: 0.5em;
@@ -7361,6 +7383,27 @@ ol li {
 #single-page .content {
   margin: 2em 0;
 }
+#single-page-admin {
+  font-size: 0.8em;
+  padding: 20px 0;
+}
+#single-page-admin h2 {
+  font-size: 1.6em;
+}
+#single-page-admin .content {
+  margin: 2em 0;
+}
+#single-page-admin .content input,
+#single-page-admin .content textarea {
+  width: 100%;
+}
+#single-page-admin .list .row {
+  border-bottom: 1px solid #f8f8f8;
+  /* Corporate blue 5% */
+}
+#single-page-admin .list .row:not(:first-child):hover {
+  background-color: rgba(62, 176, 247, 0.07);
+}
 .owl-theme .owl-controls .owl-page span {
   background: #3eb0f7;
 }
@@ -7470,10 +7513,22 @@ ol li {
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
 }
+form,
 #login-form,
 #create-user-form {
   margin: 0 auto;
 }
+form label,
+#login-form label,
+#create-user-form label {
+  margin: 0.5em 0 -1em 0;
+}
+form .row-submit,
+#login-form .row-submit,
+#create-user-form .row-submit {
+  margin-top: 2em;
+}
+form .form-control,
 #login-form .form-control,
 #create-user-form .form-control {
   border-radius: 0;
@@ -7485,6 +7540,7 @@ ol li {
   padding: 0.5em 1em;
   height: auto;
 }
+form .select,
 #login-form .select,
 #create-user-form .select {
   width: 100%;
@@ -7497,11 +7553,15 @@ ol li {
   margin: 0.5em 0;
   padding: 0.5em 1em;
   position: relative;
+  -moz-appearance: none;
+  -moz-user-select: none;
 }
+form .btn-group,
 #login-form .btn-group,
 #create-user-form .btn-group {
   width: 100%;
 }
+form .dropdown-menu,
 #login-form .dropdown-menu,
 #create-user-form .dropdown-menu {
   width: 100%;
@@ -7512,17 +7572,20 @@ ol li {
   box-shadow: none !important;
   margin: -0.75em 0 0 0 !important;
 }
+form .dropdown-menu li,
 #login-form .dropdown-menu li,
 #create-user-form .dropdown-menu li {
-  font-size: 1.4em;
+  font-size: 1.2em;
   cursor: pointer;
 }
+form .dropdown-menu li a,
 #login-form .dropdown-menu li a,
 #create-user-form .dropdown-menu li a {
   font-weight: 300;
   padding: 0.3em 0.9em 0.5em 0.9em;
   cursor: pointer;
 }
+form .caret,
 #login-form .caret,
 #create-user-form .caret {
   border-left: 7px solid transparent;
@@ -7533,8 +7596,12 @@ ol li {
   right: 4%;
   cursor: pointer;
 }
+form .btn-default,
 #login-form .btn-default,
-#create-user-form .btn-default {
+#create-user-form .btn-default,
+form .btn-dark,
+#login-form .btn-dark,
+#create-user-form .btn-dark {
   width: 100%;
 }
 #footer {
@@ -9697,7 +9764,15 @@ ol li {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.pe-ad {
+  position: relative;
+  font-size: 1.4em;
+  top: 2px;
+  margin: 0 0.2em;
+  display: inline-block;
+}
 .pe-va {
+  /* Admin icons */
   position: relative;
   top: 7px;
   margin: 0 0.7em 0 0.2em;

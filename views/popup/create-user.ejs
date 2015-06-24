@@ -46,7 +46,7 @@
 		        	</div> <!-- .row city and country -->
 		        	<div class="row" ng-hide="userCtrl.status==0">
 	        			<div class="col-xs-12">
-							<bootstrap-dropdown data-ng-model="userCtrl.user.type" data-placeholder="<%= __('Select profile type') %>" data-dropdown-data="{'1': {'id':'1', 'text':'<%= __('I want to organize events') %>'}, '2': {'id':'2','text':'<%= __('I want to sponsor events') %>'}}"></bootstrap-dropdown>
+							<bootstrap-dropdown data-ng-model="userCtrl.user.type" data-placeholder="userCtrl.placeholder_profile" data-dropdown-data="userCtrl.profiles"></bootstrap-dropdown>
 	        			</div>
 		        	</div>
 		        	<div class="row" ng-show="userCtrl.status==1">

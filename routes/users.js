@@ -73,7 +73,17 @@ router.get('/:lang/api/user/list.html', function(req, res, next) {
         if(err){ return next(err); }
 
         res.json(posts);
-    }).populate('city').populate('country');
+    }).populate('city').populate('country').populate('status').populate('profile');
+});
+
+// POST JSON user
+router.post('/:lang/api/user/get.html', function(req, res, next) {
+    var ObjectId = require('mongoose').Types.ObjectId;
+    User.findOne({ _id : new ObjectId(req.body.id) }, function(err, user){
+        if(err){ return next(err); }
+
+        res.json(user);
+    }).populate('city').populate('country').populate('status').populate('profile');
 });
 
 // POST JSON insert user
@@ -82,8 +92,8 @@ router.post('/:lang/api/user/create.html', function(req, res, next) {
 
     //Check if user's fields are completed
     var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-    if(typeof user.firstname == 'undefined' || typeof user.lastname == 'undefined' || typeof user.password == 'undefined' || typeof user.city == 'undefined' || typeof user.country == 'undefined' || typeof user.type == 'undefined' 
-      || user.firstname == '' || user.lastname == '' || user.password == '' || user.city == '' || user.country == '' || user.type == '')
+    if(typeof user.firstname == 'undefined' || typeof user.lastname == 'undefined' || typeof user.password == 'undefined' || typeof user.city == 'undefined' || typeof user.country == 'undefined' || typeof user.profile == 'undefined' 
+      || user.firstname == '' || user.lastname == '' || user.password == '' || user.city == '' || user.country == '' || user.profile == '')
     {
         res.json({'status' : '1', 'message' : res.__('All fields are mandatory')});
     }
@@ -177,6 +187,67 @@ router.post('/:lang/api/user/create.html', function(req, res, next) {
     }
 });
 
+// POST JSON update user
+router.post('/:lang/api/user/update.html', function(req, res, next) {
+    var user = new User(req.body);
+    console.log(user);
+
+    //Check if user's fields are completed
+    var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    if(typeof user.firstname == 'undefined' || 
+        typeof user.lastname == 'undefined' || 
+        typeof user.city == 'undefined' || 
+        typeof user.country == 'undefined' || 
+        typeof user.profile == 'undefined'  || 
+        typeof user.status == 'undefined' || 
+        user.firstname == '' || 
+        user.lastname == '' || 
+        user.password == '' || 
+        user.city == '' || 
+        user.country == '' || 
+        user.profile == '' || 
+        user.status == '')
+    {
+        res.json({'status' : '1', 'message' : res.__('All fields are mandatory')});
+    }
+    else if(pattern.test(user.email) == false)//Check if email is valid email address
+    {
+        res.json({'status' : '1', 'message' : res.__('Not a valid email address')});
+    }
+    else
+    {
+        User.findById(req.body._id, function(err, user) {
+            user.firstname = req.body.firstname;
+            user.lastname = req.body.lastname;
+            user.email = req.body.email;
+            user.city = req.body.city;
+            user.country = req.body.country;
+            user.profile = req.body.profile;
+            user.status = req.body.status;
+
+            user.save(function(err, user){
+                res.json({'status' : '0', 'message' : res.__('Update ok')});
+            });
+        });
+    }
+});
+
+// POST JSON delete user
+router.post('/:lang/api/user/delete.html', function(req, res, next) {
+    var ObjectId = require('mongoose').Types.ObjectId;
+    User.findOne({ _id : new ObjectId(req.body._id) }, function(err, user){
+        if(err){ return next(err); }
+
+        user.remove(function(err, user){
+            if(err){ return next(err); }
+
+            res.json({ 'status' : '0', 'message' : res.__('User deleted ok') });
+        });
+        
+    });
+});
+
+
 // POST JSON login user
 router.post('/:lang/api/user/login.html', function(req, res, next) {
     passport.authenticate('login', function(err, user, info) {
@@ -220,3 +291,4 @@ function saveUserTrack(req)
     usertrack.save();
 }
 module.exports = router;
+

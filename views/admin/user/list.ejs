@@ -1,0 +1,33 @@
+<script src="/javascripts/angular/controllers/admin/AdminUserController.js"></script>
+<div id="single-page-admin">
+	<div class="container">
+		<h2 class="wow fadeInLeft"><%= __('LIST OF USERS') %></h2>
+		<div class="title-line-left wow fadeInRight"></div>		  
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container list" ng-controller="AdminUserController as adminUserCtrl" ng-init="adminUserCtrl.loadUsers()">
+			<div class="row">
+				<div class="col-xs-2"><b>Full name</b></div>
+				<div class="col-xs-3"><b>Email</b></div>
+				<div class="col-xs-1"><b>City</b></div>
+				<div class="col-xs-2"><b>Country</b></div>
+				<div class="col-xs-1"><b>Status</b></div>
+				<div class="col-xs-1"><b>Profile</b></div>
+				<div class="col-xs-2"><b>Actions</b></div>
+			</div>
+			<div class="row" ng-repeat="user in adminUserCtrl.users">
+				<div class="col-xs-2">{{ user.firstname }} {{ user.lastname }}</div>
+				<div class="col-xs-3">{{ user.email }}</div>
+				<div class="col-xs-1">{{ user.city.en.name }}</div>
+				<div class="col-xs-2">{{ user.country.en.name }}</div>
+				<div class="col-xs-1">{{ user.status.en.name }}</div>
+				<div class="col-xs-1">{{ user.profile.en.name }}</div>
+				<div class="col-xs-2">
+					<a href="<%= siteRoot %>admin/user/{{ user.firstname }}-{{ user.lastname }}/{{ user._id }}/update.html" title="edit"><i class="pe-7s-pen pe-ad"></i></a>
+					<a href="#" ng-click="adminUserCtrl.loadUserToDelete(user._id)" data-toggle="modal" data-target="#popupDeleteConfirm" title="delete"><i class="pe-7s-close-circle pe-ad"></i></a>
+				</div>
+			</div>
+			<%- include /../../popup/delete-confirm.ejs %>
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->

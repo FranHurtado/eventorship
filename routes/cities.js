@@ -16,16 +16,13 @@ var City = mongoose.model('City');
 /* POST subscribe home page. */
 router.post('/:lang/api/city/list.html', function(req, res, next) {
     var ObjectId = require('mongoose').Types.ObjectId;
-	City.find({ 'name.lang' : req.params.lang, 'country' : new ObjectId(req.body.country_id) }, function(err, posts){
+	City.find({ 'country' : new ObjectId(req.body.country_id) }, function(err, posts){
         if(err){ return next(err); }
 
         var results = new Array();
         var text = "";
         posts.forEach(function(item) {
-            item.name.forEach(function(langItem) {
-                if(langItem.lang == req.params.lang){ text = langItem.text; }
-            });
-            results.push({"id" : item._id, "text" : text});
+            results.push({"id" : item._id, "text" : item[req.params.lang].name});
             //Order array alphabetically
             results.sort(function(a,b)
             {

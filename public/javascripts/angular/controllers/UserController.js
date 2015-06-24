@@ -2,13 +2,16 @@ app.controller('UserController', ['$http', '$location', '$scope', function ($htt
 
 	var userCtrl = this;
 
-	this.user = {};
+	userCtrl.user = {};
 
 	//Get language code from url
 	var lang = $location.absUrl().split('/')[3];
 	$http.get('/' + lang + '/api/country/list.html').success(function(data){
 		userCtrl.countries = data;
 	});
+	$http.get('/' + lang + '/api/profile/list.html').success(function(data){
+        userCtrl.profiles = data;
+    });
 
 	this.loadCities = function(){
 		var postdata = { country_id : userCtrl.user.country };
