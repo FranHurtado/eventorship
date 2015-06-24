@@ -1,0 +1,26 @@
+<script src="/javascripts/angular/controllers/admin/AdminUserTrackController.js"></script>
+<div id="single-page-admin">
+	<div class="container">
+		<h2 class="wow fadeInLeft"><%= __('LIST OF USERS TRACK') %></h2>
+		<div class="title-line-left wow fadeInRight"></div>		  
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container list" ng-controller="AdminUserTrackController as adminUserTrackCtrl" ng-init="adminUserTrackCtrl.loadUsersTrack()">
+			<div class="row">
+				<div class="col-xs-2"><b>User</b></div>
+				<div class="col-xs-4"><b>User agent</b></div>
+				<div class="col-xs-1"><b>IP</b></div>
+				<div class="col-xs-3"><b>url</b></div>
+				<div class="col-xs-2"><b>Date</b></div>
+			</div>
+			<div class="row" ng-repeat="userTrack in adminUserTrackCtrl.usersTrack">
+				<div class="col-xs-2" ng-show="userTrack.user">{{ userTrack.user.firstname }} {{ userTrack.user.lastname }}</div>
+				<div class="col-xs-2" ng-hide="userTrack.user">Unknown user</div>
+				<div class="col-xs-4">{{ userTrack.user_agent }}</div>
+				<div class="col-xs-1">{{ userTrack.ip }}</div>
+				<div class="col-xs-3">{{ userTrack.url }}</div>
+				<div class="col-xs-2">{{ userTrack.action_date | date:'dd-MM-yyyy HH:mm:ss' }}</div>
+			</div>
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->

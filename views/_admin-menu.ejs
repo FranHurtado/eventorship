@@ -15,6 +15,7 @@
 				<ul class="nav navbar-nav">
 					<li ng-show="adminCtrl.islogged"><a href="<%= siteRoot %>admin"><%= __('Home') %></a></li>
 					<li ng-show="adminCtrl.islogged"><a href="<%= siteRoot %>admin/user/list.html"><%= __('Users') %></a></li>
+					<li ng-show="adminCtrl.islogged"><a href="<%= siteRoot %>admin/user-track/list.html"><%= __('Tracking') %></a></li>
 					<li class="dropdown"<li ng-show="adminCtrl.islogged"><a href="<%= siteRoot %>admin/logout.html"><%= __('Logout') %></a></li>
 	                <li class="dropdown"<li ng-hide="adminCtrl.islogged"><a href="<%= siteRoot %>admin/login.html"><%= __('Login') %></a></li>
 				</ul>

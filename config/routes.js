@@ -1,16 +1,20 @@
 var routes = require('../routes/index');
 var users = require('../routes/users');
+var usersTrack = require('../routes/users-track');
 var countries = require('../routes/countries');
 var cities = require('../routes/cities');
 var status = require('../routes/status');
 var profiles = require('../routes/profiles');
 var adminRoutes = require('../routes/admin/index');
 var adminUsers = require('../routes/admin/users');
+var adminUsersTrack = require('../routes/admin/users-track');
 
 app.use('/admin', adminRoutes);
 app.use('/admin', adminUsers);
+app.use('/admin', adminUsersTrack);
 app.use('/', routes);
 app.use('/', users);
+app.use('/', usersTrack);
 app.use('/', countries);
 app.use('/', cities);
 app.use('/', status);

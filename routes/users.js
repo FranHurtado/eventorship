@@ -44,7 +44,7 @@ router.get('/:lang/user/:id/validate.html', function(req, res, next) {
     var id = req.params.id;
     var ObjectId = require('mongoose').Types.ObjectId;
     User.findOne({ '_id' : new ObjectId(id)}, function(err, userData){
-        userData.status = 1;
+        userData.status = new ObjectId('558ad9bbc4243c6b2bb1e874'); // Set user active
         userData.save();
     });
 
