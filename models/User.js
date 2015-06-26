@@ -9,6 +9,11 @@ var UserSchema = new mongoose.Schema({
     city: { type: mongoose.Schema.ObjectId, ref: 'City'},
     country: { type: mongoose.Schema.ObjectId, ref: 'Country'},
     profile:  { type: mongoose.Schema.ObjectId, ref: 'Profile'},
+    aboutme: String,
+    picture: String,
+    website: String,
+    company: { name: String, vat_number: String, address: String },
+    paypal: String,
     status: { type: mongoose.Schema.ObjectId, default: mongoose.Schema.ObjectId('558adaddc4243c6b2bb1e875'), ref: 'Status'}, // Default deactive until mail confirmation
     admin: { type: Number, default: 0 },
   	created_at : Date,

@@ -6799,14 +6799,14 @@ h1 {
 h2 {
   font-size: 1.8em;
   line-height: 1.4em;
-  margin: 0 0 .3em;
+  margin: 0 0 .2em;
 }
 h3 {
   font-size: 1.4em;
   line-height: 1.4em;
 }
 h4 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   line-height: 1.4em;
 }
 h5 {
@@ -6826,7 +6826,7 @@ h6 a {
   text-decoration: none;
 }
 p {
-  padding: 0 0 1em;
+  padding: 0;
   margin: 0;
 }
 a {
@@ -6854,6 +6854,9 @@ a.user {
 }
 .highlight {
   color: #3eb0f7;
+}
+.pointer {
+  cursor: pointer !important;
 }
 ol {
   padding: 0 0 0 1em;
@@ -6981,6 +6984,9 @@ ol li {
   color: white;
   border-radius: 100px;
   display: inline-block;
+}
+.btn-primary.little {
+  padding: 0.4em 0.8em;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -7259,13 +7265,13 @@ ol li {
   padding-top: 100px;
 }
 .title-line {
-  width: 100px;
+  width: 120px;
   height: 3px;
   margin: 0 auto 0.5em auto;
   background: #3eb0f7;
 }
 .title-line-left {
-  width: 100px;
+  width: 120px;
   height: 3px;
   margin: 0 0 0.5em 0;
   background: #3eb0f7;
@@ -7382,6 +7388,39 @@ ol li {
 }
 #single-page .content {
   margin: 2em 0;
+}
+#single-page .underlined {
+  border-bottom: 2px solid rgba(62, 176, 247, 0.3);
+  padding-bottom: 1.5em;
+  margin-bottom: 1em;
+}
+#single-page .profile-picture {
+  border-radius: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#single-page .profile-picture img {
+  width: 100%;
+}
+#single-page .profile-picture.lg {
+  border: 6px solid #777777;
+  width: 160px;
+  height: 160px;
+}
+#single-page .profile-picture.md {
+  border: 4px solid #777777;
+  width: 120px;
+  height: 120px;
+}
+#single-page .profile-picture.sm {
+  border: 3px solid #777777;
+  width: 80px;
+  height: 80px;
+}
+#single-page .profile-picture.xs {
+  border: 2px solid #777777;
+  width: 30px;
+  height: 30px;
 }
 #single-page-admin {
   font-size: 0.8em;
@@ -7527,6 +7566,11 @@ form .row-submit,
 #login-form .row-submit,
 #create-user-form .row-submit {
   margin-top: 2em;
+}
+form textarea,
+#login-form textarea,
+#create-user-form textarea {
+  min-height: 3.2em;
 }
 form .form-control,
 #login-form .form-control,

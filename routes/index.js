@@ -9,6 +9,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var Subscription = mongoose.model('Subscription');
 var UserTrack = mongoose.model('UserTrack');
 var config = new Array();
+var fs = require('fs');
+var IsThere = require("is-there");
 config['company'] = 'Eventorship';
 config['adminemail'] = 'info@eventorship.com';
 config['emailserver'] = 'mail.eventorship.com';
@@ -161,6 +163,34 @@ router.post('/:lang/api/contact.html', function(req, res, next) {
 			}
 		});
 	}
+});
+
+// POST upload file
+router.post('/upload.html', ensureAuthenticated, function(req, res, next) {
+    // Process image
+    var fstream;
+    var subfolder;
+    var userid;
+    req.pipe(req.busboy);
+    req.busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated){
+    	if(fieldname == "subfolder"){ subfolder = val; }
+    	if(fieldname == "userid"){ userid = val; }
+    });
+    req.busboy.on('file', function (fieldname, file, filename) {
+        // Path where image will be uploaded
+        var file_path = __dirname + '/../public/uploads/' + subfolder + '/' + userid + '/';
+    	// Check if path exists
+        if (!IsThere(file_path))
+        {
+        	fs.mkdir(file_path);
+        }
+
+        fstream = fs.createWriteStream(file_path + filename);
+        file.pipe(fstream);
+        fstream.on('close', function () {    
+            res.json({ 'status' : '0', 'file' : 'uploads/' + subfolder + '/' + userid + '/' + filename });
+        });
+    });
 });
 
 

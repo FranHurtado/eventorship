@@ -1,4 +1,4 @@
-app.controller('MainController', ['$location', '$http', '$window', function ($location, $http, $window){
+app.controller('MainController', ['$location', '$http', '$window', '$scope', function ($location, $http, $window, $scope){
 
 	var mainCtrl = this;
 	mainCtrl.lang = $location.absUrl().split('/')[3];
@@ -7,6 +7,8 @@ app.controller('MainController', ['$location', '$http', '$window', function ($lo
     $http.get('/api/user/islogged.html').success(function(data){
         mainCtrl.islogged = data.result;
         mainCtrl.userLogged = data.user;
+        $scope.islogged = data.result;
+        $scope.userLogged = data.user;
     });
 
     this.login = function(){
@@ -20,7 +22,7 @@ app.controller('MainController', ['$location', '$http', '$window', function ($lo
         $http.post('/' + lang + '/api/user/login.html', postdata).success(function(data){
             if(data.status == 0)
             {
-                $window.location.href=$location.absUrl();
+                $window.location.href = mainCtrl.referrer;
             }
             else
             {
@@ -29,7 +31,10 @@ app.controller('MainController', ['$location', '$http', '$window', function ($lo
             }
         });
     };
-    
+
+    this.setReferrer = function(url){
+        mainCtrl.referrer = url;
+    }
 }]);
 
 /*
@@ -40,9 +45,10 @@ app.directive('bootstrapDropdown', function ($compile) {
         restrict: 'E',
         scope: {
             items: '=dropdownData',
-            selectedItem: '=preselectedItem',
+            selectedId: '@',
+            selectedText: '@',
             ngModel: '=',
-            placeholder: '@',
+            placeholder: '=',
             ngChange: '&'
         },
         link: function (scope, element, attrs) {
@@ -51,21 +57,31 @@ app.directive('bootstrapDropdown', function ($compile) {
                 scope.ngModel = id;
                 scope.placeholder = text;
                 var loadCities = setInterval(function(){
-                	scope.ngChange();
-                	clearInterval(loadCities);
+                    scope.ngChange();
+                    clearInterval(loadCities);
                 }, 500);
             };
-            
-            var html = '';
-            html += '<div class="btn-group">';
-            html += '<input class="form-control" type="hidden" ng-model ="ngModel" data-ng-attr-placeholder="{{placeholder}}" ng-readonly="true" />';
-            html += '<a href="#" ng-model="userCtrl.type" class="select dropdown-toggle" data-toggle="dropdown" value="0">{{placeholder}}<span class="caret"></span></a>';
-            html += '<ul class="dropdown-menu scrollable-menu no-radius options" role="menu">';
-            html += '<li ng-repeat="(key, item) in items"><a ng-href="#" role="menuitem" ng-click="selectVal(item.id, item.text);">{{item.text}}</a></li>';
-            html += '</ul>';
-            html += '</div>';
-          
-            element.append($compile(html)(scope));
+
+            var loadSelected = setInterval(function(){    
+                if (typeof scope.selectedId != "undefined")
+                {
+                    scope.ngModel = scope.selectedId;
+                    scope.placeholder = scope.selectedText;
+                    clearInterval(loadSelected);
+                }
+                
+                var html = '';
+                html += '<div class="btn-group">';
+                html += '<input class="form-control" type="hidden" ng-model="ngModel" ng-attr-placeholder="{{ placeholder }}" ng-readonly="true" />';
+                html += '<a href="#" ng-model="ngModel" class="select dropdown-toggle" data-toggle="dropdown">{{ placeholder }}<span class="caret"></span></a>';
+                html += '<ul class="dropdown-menu scrollable-menu no-radius options" role="menu">';
+                html += '<li ng-repeat="(key, item) in items"><a ng-href="#" role="menuitem" ng-click="selectVal(item.id, item.text);">{{ item.text }}</a></li>';
+                html += '</ul>';
+                html += '</div>';
+              
+                element.append($compile(html)(scope));
+
+            }, 500);
         }
     };
 });

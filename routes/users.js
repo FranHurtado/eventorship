@@ -20,7 +20,7 @@ router.get('/:lang/user/login.html', function(req, res, next) {
     // Save user track
     saveUserTrack(req);
 
-    res.render('user/login', { title: 'User login', lang : req.params.lang, _layoutFile: 'layout' });
+    res.render('user/login', { title: 'User login', referrer: req.headers['referer'], lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 // GET user list
@@ -37,6 +37,14 @@ router.get('/:lang/user/:id/profile.html', ensureAuthenticated, function(req, re
     saveUserTrack(req);
 
     res.render('user/profile', { title: 'User profile', lang : req.params.lang, _layoutFile: 'layout' });
+});
+
+// GET user edit profile
+router.get('/:lang/user/:id/edit-profile.html', ensureAuthenticated, function(req, res, next) {
+    // Save user track
+    saveUserTrack(req);
+
+    res.render('user/edit-profile', { title: 'User edit profile', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 //GET create user form
@@ -195,7 +203,6 @@ router.post('/:lang/api/user/create.html', function(req, res, next) {
 // POST JSON update user
 router.post('/:lang/api/user/update.html', function(req, res, next) {
     var user = new User(req.body);
-    console.log(user);
 
     //Check if user's fields are completed
     var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
@@ -237,6 +244,58 @@ router.post('/:lang/api/user/update.html', function(req, res, next) {
     }
 });
 
+// POST JSON update profile
+router.post('/:lang/api/user/update-profile.html', function(req, res, next) {
+    var user = new User(req.body);
+
+    //Check if user's fields are completed
+    var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    if(typeof user.firstname == 'undefined' || 
+        typeof user.lastname == 'undefined' || 
+        typeof user.city == 'undefined' || 
+        typeof user.country == 'undefined' || 
+        typeof user.profile == 'undefined'  ||  
+        user.firstname == '' || 
+        user.lastname == '' || 
+        user.password == '' || 
+        user.city == '' || 
+        user.country == '' || 
+        user.profile == '')
+    {
+        res.json({'status' : '1', 'message' : res.__('All fields with * are mandatory')});
+    }
+    else if(pattern.test(user.email) == false)//Check if email is valid email address
+    {
+        res.json({'status' : '1', 'message' : res.__('Not a valid email address')});
+    }
+    else
+    {
+        User.findById(req.user._id, function(err, user) {
+            user.firstname = req.body.firstname;
+            user.lastname = req.body.lastname;
+            user.email = req.body.email;
+            user.birthdate = req.body.birthdate;
+            user.city = req.body.city;
+            user.country = req.body.country;
+            user.profile = req.body.profile;
+            user.aboutme = req.body.aboutme;
+            user.picture = req.body.picture;
+            user.website = req.body.website;
+            user.company.name = req.body.company.name;
+            user.company.vat_number = req.body.company.vat_number;
+            user.company.address = req.body.company.address;
+            user.paypal = req.body.paypal;
+
+            console.log(user);
+            console.log(req.body);
+
+            user.save(function(err, user){
+                res.json({'status' : '0', 'user' : user, 'message' : res.__('Update ok')});
+            });
+        });
+    }
+});
+
 // POST JSON delete user
 router.post('/:lang/api/user/delete.html', function(req, res, next) {
     var ObjectId = require('mongoose').Types.ObjectId;
@@ -251,7 +310,6 @@ router.post('/:lang/api/user/delete.html', function(req, res, next) {
         
     });
 });
-
 
 // POST JSON login user
 router.post('/:lang/api/user/login.html', function(req, res, next) {
@@ -278,7 +336,6 @@ router.post('/:lang/api/user/login.html', function(req, res, next) {
         }
     })(req, res, next);
 });
-
 
 // GET JSON is user logged
 router.get('/api/user/islogged.html', function(req, res, next) {

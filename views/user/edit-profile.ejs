@@ -1,0 +1,109 @@
+ <%- include ../_menu.ejs %>
+
+<div id="single-page" ng-controller="UserController as userCtrl" ng-init="userCtrl.loadProfile()">
+	<div class="container">
+		<h2 class="wow fadeInLeft"><%= __('EDIT YOUR PROFILE') %></h2>
+		<div class="title-line-left wow fadeInRight"></div>	
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container">
+			<form name="editUserForm" ng-submit="userCtrl.updateUser()" novalidate>
+				<div class="row underlined">
+					<div class="col-xs-12 col-sm-8">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6">
+								<label><%= __('First name') %> *</label>
+								<input ng-model="userCtrl.user.firstname" class="form-control" type="text" />
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<label><%= __('Last name') %> *</label>
+								<input ng-model="userCtrl.user.lastname" class="form-control" type="text" />
+							</div>
+							<div class="col-xs-12">
+								<label><%= __('Email') %> *</label>
+								<input ng-model="userCtrl.user.email" class="form-control" type="text" />
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<label><%= __('Country') %> *</label>
+			        			<bootstrap-dropdown ng-model="userCtrl.user.country" data-placeholder="userCtrl.placeholder_country" data-dropdown-data="userCtrl.countries" ng-change="userCtrl.loadCities()" data-selected-id="{{ userCtrl.user.country._id }}" data-selected-text="{{ userCtrl.user.country.getname }}"></bootstrap-dropdown>
+			        		</div>
+			    			<div class="col-xs-12 col-sm-6">
+			    				<label><%= __('City') %> *</label>
+			    				<bootstrap-dropdown ng-model="userCtrl.user.city" data-placeholder="userCtrl.placeholder_city" data-dropdown-data="userCtrl.cities" data-selected-id="{{ userCtrl.user.city._id }}" data-selected-text="{{ userCtrl.user.city.getname }}"></bootstrap-dropdown>
+			    			</div>
+			    			<div class="col-xs-12 col-sm-6">
+								<label><%= __('Birthdate') %></label>
+			        			<input ng-model="userCtrl.user.birthdate" class="form-control" type="text" placeholder="<%= __('dd/mm/yyyy') %>" />
+			        		</div>
+			    			<div class="col-xs-12 col-sm-6">
+			    				<label><%= __('Profile type') %> *</label>
+			        			<bootstrap-dropdown data-ng-model="userCtrl.user.profile" data-placeholder="userCtrl.placeholder_profile" data-dropdown-data="userCtrl.profiles" data-selected-id="{{ userCtrl.user.profile._id }}" data-selected-text="{{ userCtrl.user.profile.getdescription }}"></bootstrap-dropdown>
+			    			</div>
+						</div>
+					</div><!-- .col left -->
+					<div class="col-xs-12 col-sm-4">
+						<div class="profile-picture lg">
+							<p class="text-center" ng-hide="userCtrl.user.picture">
+								<img src="<%= siteRoot %>images/avatar.jpg" />
+							</p>
+							<p class="text-center" ng-show="userCtrl.user.picture">
+								<img src="<%= siteRoot %>{{ userCtrl.user.picture }}" />
+							</p>
+						</div>
+						<p class="text-center" ng-show="userCtrl.user.picture">
+							<a href="#" ng-click="userCtrl.deletePicture()"><%= __('Delete') %></a>
+						</p>
+						<h4 class="text-center">
+							<div class="progress" ng-show="userCtrl.progress" style="width: 70%; margin: 0 auto 0.5em auto;">
+							  	<div class="progress-bar" role="progressbar" aria-valuenow="{{userCtrl.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{userCtrl.progress}}%;"></div>
+							</div>
+							<span class="label label-default pointer" ngf-select ng-model="userCtrl.picture_file" ngf-change="userCtrl.uploadPicture($files, $event)"><%= __('Upload') %></span>
+						</h4>
+					</div><!-- .col right -->
+				</div><!-- .row -->
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('About me') %></label>
+						<textarea ng-model="userCtrl.user.aboutme" msd-elastic class="form-control" placeholder="<%= __('Write something about you...') %>"></textarea>
+					</div>
+				</div>
+				<div class="row underlined">
+					<div class="col-xs-12 col-sm-6">
+						<label><%= __('Website') %></label>
+						<input ng-model="userCtrl.user.website" class="form-control" type="text" placeholder="<%= __('http://www.yourwebsite.com') %>" />
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<label><%= __('Paypal account') %></label>
+						<input ng-model="userCtrl.user.paypal" class="form-control" type="text" placeholder="<%= __('Your paypal account') %>" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<p><%= __('If you work on behalf of a company, please fill the below data.') %></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<label><%= __('Company') %></label>
+						<input ng-model="userCtrl.user.company.name" class="form-control" type="text" placeholder="<%= __('Your company name') %>" />
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<label><%= __('VAT number') %></label>
+						<input ng-model="userCtrl.user.company.vat_number" class="form-control" type="text" placeholder="<%= __('Your company VAT number') %>" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('Address') %></label>
+						<input ng-model="userCtrl.user.company.address" class="form-control" type="text" placeholder="<%= __('Your company full address') %>" />
+					</div>
+				</div>
+				<div class="row row-submit">
+	        		<div class="col-xs-6 col-sm-4 col-sm-offset-4">
+	        			<input type="submit" class="btn btn-default" value="<%= __('Update your profile') %>" />
+	        		</div>
+	        	</div>
+			</form>
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->

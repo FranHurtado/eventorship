@@ -2,12 +2,45 @@
 
 <div id="single-page" ng-controller="UserController as userCtrl" ng-init="userCtrl.loadUser()">
 	<div class="container">
-		<h2 class="wow fadeInLeft">{{ userCtrl.user.firstname | uppercase}} {{ userCtrl.user.lastname | uppercase}}</h2>
-		<div class="title-line-left wow fadeInRight"></div>	
-		<p>{{ userCtrl.user.city.getname }} ({{ userCtrl.user.country.getname }})</p>	  
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0">
+				<div class="profile-picture lg">
+					<p class="text-center" ng-hide="userCtrl.user.picture">
+						<img src="<%= siteRoot %>images/avatar.jpg" />
+					</p>
+					<p class="text-center" ng-show="userCtrl.user.picture">
+						<img src="<%= siteRoot %>{{ userCtrl.user.picture }}" />
+					</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-10">
+				<h2 class="wow fadeInLeft">
+					{{ userCtrl.user.firstname | uppercase}} {{ userCtrl.user.lastname | uppercase}}
+				</h2>
+				<div class="title-line-left wow fadeInRight"></div>	
+				<p>{{ userCtrl.user.city.getname }} ({{ userCtrl.user.country.getname }})</p>
+				<a href="<%= siteRoot %><%= lang %>/user/{{ userCtrl.user._id }}/edit-profile.html" class="btn btn-primary little" ng-show="userCtrl.isUser"><%= __('Edit profile') %></a>
+			</div>
+		</div>	  
 	</div><!-- .container -->
 	<div class="content">
 		<div class="container">
+			<div class="row">
+				<div class="cols-xs-12 col-sm-8">
+					<h3 ng-show="userCtrl.user.aboutme"><%= __('About me') %></h3>
+					<p ng-show="userCtrl.user.aboutme">{{ userCtrl.user.aboutme }}</p>
+
+					<h3><%= __('My last events') %></h3>
+					<p></p>
+				</div>
+				<div class="col-xs-12 col-sm-4">
+					<h4 ng-show="userCtrl.user.website"><%= __('Website') %></h4>
+					<p ng-show="userCtrl.user.website">{{ userCtrl.user.website }}</p>
+
+					<h4 ng-show="userCtrl.user.company.name"><%= __('Company') %></h4>
+					<p ng-show="userCtrl.user.company.name">{{ userCtrl.user.company.name }}</p>
+				</div>
+			</div>
 		</div><!-- .container -->
 	</div><!-- .content -->
 </div><!-- #single-page -->
