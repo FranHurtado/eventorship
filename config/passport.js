@@ -1,4 +1,6 @@
 // Passport auth config
+var i18n = require("i18n");
+var sha1 = require('sha1');
 var User = mongoose.model('User');
 
 passport.serializeUser(function(user, done) {
@@ -26,7 +28,7 @@ passport.use('login', new LocalStrategy({
             return done(null, false, i18n.__('User not valid'));                 
         }
         // User exists but wrong password, log the error 
-        if (user.password != password)
+        if (user.password != sha1(password))
         {
             return done(null, false, i18n.__('Password not valid'));
         }

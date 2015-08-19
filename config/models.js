@@ -5,3 +5,5 @@ require('../models/Country');
 require('../models/City');
 require('../models/Status');
 require('../models/Profile');
+require('../models/Currency');
+require('../models/Event');

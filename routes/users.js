@@ -20,7 +20,10 @@ router.get('/:lang/user/login.html', function(req, res, next) {
     // Save user track
     saveUserTrack(req);
 
-    res.render('user/login', { title: 'User login', referrer: req.headers['referer'], lang : req.params.lang, _layoutFile: 'layout' });
+    // Set referrer to go back
+    var referrer = typeof req.headers['referer'] == 'undefined' ? siteRoot : req.headers['referer'];
+
+    res.render('user/login', { title: 'User login', referrer: referrer, lang : req.params.lang, _layoutFile: 'layout' });
 });
 
 // GET user list
@@ -47,7 +50,7 @@ router.get('/:lang/user/:id/edit-profile.html', ensureAuthenticated, function(re
     res.render('user/edit-profile', { title: 'User edit profile', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
-//GET create user form
+// GET create user form
 router.get('/:lang/user/create.html', function(req, res, next) {
     // Save user track
     saveUserTrack(req);
@@ -55,7 +58,7 @@ router.get('/:lang/user/create.html', function(req, res, next) {
     res.render('user/create', { title: 'Create user', lang : req.params.lang, _layoutFile: 'layout' });
 });
 
-//GET validate user form
+// GET validate user form
 router.get('/:lang/user/:id/validate.html', function(req, res, next) {
     var id = req.params.id;
     var ObjectId = require('mongoose').Types.ObjectId;
@@ -342,15 +345,5 @@ router.get('/api/user/islogged.html', function(req, res, next) {
     res.json({'result' : req.isAuthenticated(), 'user' : req.user});
 });
 
-
-function saveUserTrack(req)
-{
-    usertrack = new UserTrack();
-    usertrack.user = typeof req.user != "undefined" ? req.user._id : null;
-    usertrack.url = req.get('host') + req.originalUrl;
-    usertrack.ip = req.ip + " | " + req.ips;
-    usertrack.user_agent = req.headers['user-agent'];
-    usertrack.save();
-}
 module.exports = router;
 

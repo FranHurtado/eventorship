@@ -13,7 +13,8 @@ app.controller('UserController', ['$http', '$location', '$window', '$scope', 'Up
         userCtrl.profiles = data;
     });
 
-	this.loadCities = function(first=false){
+	this.loadCities = function(first){
+		first = typeof first !== 'undefined' ? first : false;
 		var postdata = { country_id : userCtrl.user.country };
 		$http.post('/' + lang + '/api/city/list.html', postdata).success(function(data){
 			userCtrl.cities = data;

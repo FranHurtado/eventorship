@@ -87,6 +87,7 @@ router.post('/:lang/api/subscribe.html', function(req, res, next) {
 			if (subscription === null)
 			{
 				var subscription = new Subscription(req.body);
+				subscription.lang = req.params.lang;
 				subscription.save(function(err, post){
 			    	if(err){ return next(err); }
 
@@ -192,16 +193,5 @@ router.post('/upload.html', ensureAuthenticated, function(req, res, next) {
         });
     });
 });
-
-
-function saveUserTrack(req)
-{
-	usertrack = new UserTrack();
-	usertrack.user = typeof req.user != "undefined" ? req.user._id : null;
-	usertrack.url = req.get('host') + req.originalUrl;
-	usertrack.ip = req.ip + " | " + req.ips;
-	usertrack.user_agent = req.headers['user-agent'];
-	usertrack.save();
-}
 
 module.exports = router;

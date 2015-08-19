@@ -35,37 +35,7 @@
 
 </div><!-- .fullscreen -->
 
-<div id="menu">
-	<nav class="navbar-wrapper navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-					<span class="sr-only">Toggle navigation</span>
-				  	<span class="icon-bar"></span>
-				  	<span class="icon-bar"></span>
-				  	<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand site-name" href="#top"><img src="<%= siteRoot %>images/logo_<%= lang %>.png" /></a>
-			</div>
-	 
-			<div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-				<ul class="nav navbar-nav">
-					<li><a href="<%= siteRoot %><%= lang %>"><%= __('Inicio') %></a></li>
-					<li class="dropdown" ng-show="mainCtrl.islogged">
-	                	<a href="#" class="dropdown-toggle user" data-toggle="dropdown">
-	                		{{ mainCtrl.userLogged.firstname }} {{ mainCtrl.userLogged.lastname }}
-	                		<span class="caret"></span>
-	                	</a>
-						<ul class="dropdown-menu no-radius" role="menu" style="padding: 0;">
-		            		<%- include _user-menu.ejs %>
-						</ul>
-					</li>
-	                <li class="dropdown"<li ng-hide="mainCtrl.islogged"><a href="#" data-toggle="modal" data-target="#popupLogin"><%= __('Login') %></a></li>
-				</ul>
-			</div>
-		</div><!-- .container -->
-	</nav>
-</div><!-- #menu -->
+<%- include ./_menu.ejs %>
 
 <div id="intro">
 	<div class="container">

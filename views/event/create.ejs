@@ -1,0 +1,90 @@
+<%- include ../_menu.ejs %>
+
+<script src="/javascripts/angular/controllers/EventController.js"></script>
+<div id="single-page" ng-controller="EventController as eventCtrl">
+	<div class="container">
+		<h2 class="wow fadeInLeft"><%= __('CREATE YOUR EVENT') %></h2>
+		<div class="title-line-left wow fadeInRight"></div>	
+	</div><!-- .container -->
+	<div class="content">
+		<div class="container">
+			<form name="eventCreateForm" ng-submit="eventCtrl.create()" novalidate>
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('Event title') %> *</label>
+						<input ng-model="eventCtrl.event.title" class="form-control" type="text" placeholder="<%= __('Your event title') %>" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('Event subtitle') %>*</label>
+						<input ng-model="eventCtrl.event.subtitle" class="form-control" type="text" placeholder="<%= __('Short subtitle for more information') %>" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('Event description') %></label>
+						<textarea ng-model="eventCtrl.event.description" msd-elastic class="form-control" placeholder="<%= __('Write something about your event...') %>"></textarea>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<label><%= __('Event location') %>*</label>
+	        			<bootstrap-dropdown ng-model="eventCtrl.event.country" data-placeholder="eventCtrl.placeholder_country" data-dropdown-data="eventCtrl.countries" ng-change="eventCtrl.loadCities()" data-selected-id="{{ eventCtrl.event.country._id }}" data-selected-text="<%= __('Select country') %>"></bootstrap-dropdown>
+	        		</div>
+	    			<div class="col-xs-12 col-sm-6">
+	    				<label>&nbsp;</label>
+	    				<bootstrap-dropdown ng-model="eventCtrl.event.city" data-placeholder="eventCtrl.placeholder_city" data-dropdown-data="eventCtrl.cities" data-selected-id="{{ eventCtrl.event.city._id }}" data-selected-text="<%= __('Select city') %>"></bootstrap-dropdown>
+	    			</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<label><%= __('Budget estimation') %>*</label>
+	        			<input ng-model="eventCtrl.event.budget" only-num class="form-control" type="text" placeholder="<%= __('Amount of money') %>" maxlength="14" />
+
+	        		</div>
+	    			<div class="col-xs-12 col-sm-3 col-md-2">
+	    				<label>&nbsp;</label>
+	    				<bootstrap-dropdown ng-model="eventCtrl.event.currency" data-placeholder="eventCtrl.placeholder_currency" data-dropdown-data="eventCtrl.currencies" data-selected-id="{{ eventCtrl.event.currency.id }}" data-selected-text="<%= __('Currency') %>"></bootstrap-dropdown>
+	    			</div>
+	    			<div class="col-xs-12 col-sm-6 col-md-4">
+						<label><%= __('Minimum amount to do the event') %></label>
+	        			<input ng-model="eventCtrl.event.minimum_amount" only-num class="form-control" type="text" placeholder="<%= __('Minimum amount of money') %>" maxlength="14" />
+
+	        		</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<label><%= __('Video link') %></label>
+	        			<input ng-model="eventCtrl.event.video" only-num class="form-control" type="text" placeholder="<%= __('Youtube, Vimeo, ...') %>" />
+	        		</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<label>
+							<%= __('Pictures') %>&nbsp;
+							<span class="label label-default pointer" ngf-select ng-model="eventCtrl.picture_file" ngf-change="eventCtrl.uploadPicture($files, $event)"><%= __('Upload') %></span>
+							<div class="progress" ng-show="eventCtrl.progress" style="width: 70%; margin: 0 auto 0.5em auto;">
+							  	<div class="progress-bar" role="progressbar" aria-valuenow="{{eventCtrl.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{eventCtrl.progress}}%;"></div>
+							</div>
+
+						</label>
+	        		</div>
+				</div>
+				<div class="row" ng-show="eventCtrl.status==1">
+		        		<div class="col-xs-12">
+		        			<p ng-show="eventCtrl.status==1" class="text-center" style="font-size: 1.1em; margin-top: 0.5em;">
+								<span class="label label-danger">{{eventCtrl.message}}</span>
+							</p>
+		        		</div>
+		        	</div> <!-- .row message error -->
+				<div class="row row-submit">
+	        		<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+	        			<input type="submit" class="btn btn-default" value="<%= __('Save event') %>" />
+	        		</div>
+	        	</div>
+			</form>
+		</div><!-- .container -->
+	</div><!-- .content -->
+</div><!-- #single-page -->

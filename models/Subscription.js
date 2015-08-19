@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var SubscriptionSchema = new mongoose.Schema({
 	email      : String,
+	lang       : String,
 	created_at : Date,
 	updated_at : Date
 });

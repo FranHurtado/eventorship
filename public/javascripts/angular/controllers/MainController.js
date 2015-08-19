@@ -3,6 +3,7 @@ app.controller('MainController', ['$location', '$http', '$window', '$scope', fun
 	var mainCtrl = this;
 	mainCtrl.lang = $location.absUrl().split('/')[3];
     mainCtrl.userLogged = null;
+    mainCtrl.onlyNumber = /^\d+$/; // Regex for check if input is number.
 
     $http.get('/api/user/islogged.html').success(function(data){
         mainCtrl.islogged = data.result;
@@ -22,7 +23,14 @@ app.controller('MainController', ['$location', '$http', '$window', '$scope', fun
         $http.post('/' + lang + '/api/user/login.html', postdata).success(function(data){
             if(data.status == 0)
             {
-                $window.location.href = mainCtrl.referrer;
+                if(typeof mainCtrl.referrer != 'undefined')
+                {
+                    $window.location.href = mainCtrl.referrer;
+                }
+                else
+                {
+                    $window.location.href = $location.absUrl();
+                }
             }
             else
             {
@@ -85,3 +93,22 @@ app.directive('bootstrapDropdown', function ($compile) {
         }
     };
 });
+
+app.directive('onlyNum', function($compile) {
+    return function(scope, element, attrs) {
+
+        var keyCode = [8,9,37,39,48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,110,188,190];
+        element.bind("keydown", function(event) {
+            console.log($.inArray(event.which,keyCode));
+            if($.inArray(event.which,keyCode) == -1) {
+                scope.$apply(function(){
+                    scope.$eval(attrs.onlyNum);
+                    event.preventDefault();
+                });
+                event.preventDefault();
+            }
+
+        });
+    };
+});
+
